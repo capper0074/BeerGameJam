@@ -48,8 +48,9 @@ namespace GameJam.Character
                 }
 
                 isInitialize = true;
+                
             }
-
+            
         }
 
         public static void DisplayInventory()

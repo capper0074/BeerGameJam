@@ -13,11 +13,13 @@ namespace GameJam.Character
     {
         public static string Name { get; set; }
 
-        public static int health { get; set; }
+        public static int Health { get; set; }
 
-        public static int stamina { get; set; }
+        public static int Stamina { get; set; }
 
-        public static int drunk { get; set; }
+        public static int Drunk { get; set; }
+
+        public static int Piss { get; set; }
 
         private static bool isInitialize;
 
@@ -30,9 +32,11 @@ namespace GameJam.Character
             else
             {
                 Name = "Møller";
-                health = 100;
-                stamina = 100;
-                drunk = 100;
+                Health = 100;
+                Stamina = 100;
+                Drunk = 10;
+                Piss = 20;
+
                 isInitialize = true;
             }
 
@@ -42,18 +46,35 @@ namespace GameJam.Character
         {
             Console.Clear();
             Console.WriteLine("Your name are: " + Name);
-            Beautifier.CoolBar(health, stamina, drunk);
+            Beautifier.CoolBar(Health, Stamina, Drunk, Piss);
         }
 
         public static void Tick_Stamina()
         {
-            stamina = stamina - 10;
+            Stamina = Stamina - 10;
         }
 
-        //public static void Eat(Items food)
-        //{
-        //    return null;
-        //}
+        public static void Tick_Piss()
+        {
+            Piss += 1 * (Drunk / 10);
+        }
+
+        public static void TakeAPiss()
+        {
+            Piss = 0;
+        }
+
+        public static void Eat(Items food)
+        {
+            Health += food.HealthStat;
+            Stamina += food.StaminaStat;
+            Drunk += food.DrunkStat;
+
+            Beautifier.CoolWrite("purple", $"Your Health have increased by {food.HealthStat}");
+            Beautifier.CoolWrite("purple", $"Your Stamina have increased by {food.StaminaStat}");
+            Beautifier.CoolWrite("purple", $"Your Drunk have increased by {food.DrunkStat}");
+
+        }
 
 
 
