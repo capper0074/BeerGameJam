@@ -6,7 +6,50 @@ using System.Threading.Tasks;
 
 namespace GameJam.Fighting
 {
-    internal class Enemy
+    public class Enemy
     {
+        public string Name { get; set; }
+
+        public int Health { get; set; }
+
+        public static bool IsInitialized { get; set; }
+
+        private static List<Enemy> Enemies = new();
+
+        public Enemy(string name, int health)
+        {
+            Name = name;
+            Health = health;
+        }
+
+        public static void Initialize()
+        {
+            if (IsInitialized) return;
+
+            Enemies = new List<Enemy>();
+
+            if (!IsInitialized)
+            {
+                IsInitialized = true;
+
+                Enemy jan = new Enemy("J'Bro", 100);
+
+                Enemy leif = new Enemy("Leif", 100);
+
+                Enemies.Add(leif);
+                Enemies.Add(jan);
+            }
+
+        }
+
+        public static void DisplayEnemy(Enemy enemy)
+        {
+            throw new NotImplementedException(); //TODO: Implement this method to display this enemy
+        }
+
+        public static void AttackEnemy(Enemy enemy)
+        {
+            throw new NotImplementedException(); //TODO: Implement this method to deal damage to an enemy
+        }
     }
 }
