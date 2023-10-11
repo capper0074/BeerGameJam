@@ -17,7 +17,7 @@ namespace GameJam.Levels
 
             if (playerChoice == "Valg1")
             {
-                Controls.Control();
+                WakingUp.WakeUp();
             }
             else if (playerChoice == "Show inventory")
             {
