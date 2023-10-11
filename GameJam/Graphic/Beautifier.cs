@@ -70,18 +70,16 @@ namespace GameJam.Graphic
         public static void CoolLoadingScreen(int increment)
         {
             AnsiConsole.Progress().
-                                    AutoClear(true)
-                                    .Start(ctx =>
-                                    {
-                                        // Define tasks
-                                        var task1 = ctx.AddTask("[green]Loading[/]");
-
-                                        while (!ctx.IsFinished)
-                                        {
+                        AutoClear(true)
+                            .Start(ctx =>
+                            {
+                              var task1 = ctx.AddTask("[green]Loading[/]");
+                              while (!ctx.IsFinished)
+                              {
                                             Thread.Sleep(100);
                                             task1.Increment(increment);
-                                        }
-                                    });
+                              }
+                            });
         }
     }
 }
