@@ -25,14 +25,15 @@ namespace GameJam.Character
 
             if (inventory.Count == 0)
             {
-                Items cookie = new Items("Cookie", 10);
-                Items apple = new Items("Apple", 5);
-                Items mushroom = new Items("Mushroom", 10);
-                inventory.Add(cookie);
-                inventory.Add(apple);
-                inventory.Add(mushroom);
+                foreach (var item in GameItems.gameItemList)
+                {
+                    if(item.IsStartingItem)
+                    {
+                        inventory.Add(item);
+                    }
+                }
 
-                Items empty_slot = new Items("Empty_Slot", 0);
+                Items empty_slot = new Items("Empty_Slot", 0, 0, 0, true);
 
                 for (int i = 0; i < 10 - inventory.Count; i++)
                 {

@@ -26,6 +26,8 @@ namespace GameJam.Fighting
         {
             if (IsInitialized) return;
 
+            Enemies = new List<Enemy>();
+
             if (!IsInitialized)
             {
                 IsInitialized = true;
@@ -37,6 +39,7 @@ namespace GameJam.Fighting
                 Enemies.Add(leif);
                 Enemies.Add(jan);
             }
+
         }
 
         public static void DisplayEnemy(Enemy enemy)
