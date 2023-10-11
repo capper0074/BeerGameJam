@@ -52,19 +52,7 @@ namespace GameJam.Character
 
         public static void Eat(Items food)
         {
-
-            if (food.Name == "cookie")
-            {
-                stamina += food.Item_stat;
-            }
-            else if (food.Name == "apple")
-            {
-                stamina += food.Item_stat;
-            }
-            else if (food.Name == "mushroom")
-            {
-                stamina -= food.Item_stat;
-            }
+            return null;
         }
 
 
