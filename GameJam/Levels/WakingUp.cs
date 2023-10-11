@@ -11,8 +11,9 @@ namespace GameJam.Levels
     internal static class WakingUp
     {
         public static void WakeUp()
-
         {
+            Beautifier.CoolLoadingScreen(20);
+
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvor Fuck er jeg?");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Og Fuck hvor er jeg tørstig.");
@@ -49,14 +50,6 @@ namespace GameJam.Levels
                 //Trigger Combat
                 throw new NotImplementedException();
             }
-
-
-
-
-
-
-
-
 
         }
     }

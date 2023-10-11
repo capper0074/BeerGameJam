@@ -25,7 +25,7 @@ namespace GameJam.Graphic
             AnsiConsole.MarkupLine($"[{color1}] {text1}: [/][{color2}] {text2}[/]");
         }
 
-        public static void CoolBar(int health, int stamina, int 
+        public static void CoolBar(int health, int stamina, int
             drunk)
         {
             AnsiConsole.Write(new BarChart()
@@ -67,6 +67,21 @@ namespace GameJam.Graphic
             return playerChoice;
         }
 
+        public static void CoolLoadingScreen(int increment)
+        {
+            AnsiConsole.Progress().
+                                    AutoClear(true)
+                                    .Start(ctx =>
+                                    {
+                                        // Define tasks
+                                        var task1 = ctx.AddTask("[green]Loading[/]");
 
+                                        while (!ctx.IsFinished)
+                                        {
+                                            Thread.Sleep(100);
+                                            task1.Increment(increment);
+                                        }
+                                    });
+        }
     }
 }

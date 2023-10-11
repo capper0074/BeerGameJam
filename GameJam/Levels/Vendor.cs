@@ -12,6 +12,8 @@ namespace GameJam.Levels
     {
         public static void VendorIntro(string vendor)
         {
+            Beautifier.CoolLoadingScreen(15);
+
             if (vendor.ToLower() == "person")
             {
                 VendorPerson();
