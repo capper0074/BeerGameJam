@@ -7,14 +7,54 @@ using System.Threading.Tasks;
 
 namespace GameJam.Character
 {
-    internal class Inventory
+    internal static class Inventory
     {
-        public List<Items> InventoryList { get; set; } //List containing the type Items
+        private static List<Items> inventory; //List containing the type Items
 
-
-        public void GetInventory()
+        private static bool isInitialize;
+        public static void Initialize()
         {
-            throw new NotImplementedException(); //TODO: Implement this
+            if (isInitialize)
+            {
+                return;
+            }
+
+            inventory = new List<Items>();
+
+            if (inventory.Count == 0)
+            {
+                Items cookie = new Items("Cookie", 10);
+                Items apple = new Items("Apple", 5);
+                Items mushroom = new Items("Mushroom", 10);
+                inventory.Add(cookie);
+                inventory.Add(apple);
+                inventory.Add(mushroom);
+
+                Items empty_slot = new Items("Empty_Slot", 0);
+
+                for (int i = 0; i < 10 - inventory.Count; i++)
+                {
+                    inventory.Add(empty_slot);
+                }
+
+                isInitialize = true;
+            }
+
+        }
+
+        public static void DisplayInventory()
+        {
+            throw new NotImplementedException(); //TODO: Implement to display inventory
+        }
+
+        public static void AddToInventory(Items item)
+        {
+            throw new NotImplementedException(); //TODO: Implement this to add an item to inventory
+        }
+
+        public static void PickFromInventory(Items item)
+        {
+            throw new NotImplementedException(); //TODO: Implement this to pick an item from inventory
         }
     }
 }
