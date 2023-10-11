@@ -11,7 +11,7 @@ namespace GameJam.Character
 {
     public static class Player
     {
-        public static string name { get; set; }
+        public static string Name { get; set; }
 
         public static int health { get; set; }
 
@@ -29,7 +29,7 @@ namespace GameJam.Character
             }
             else
             {
-                name = "Møller";
+                Name = "Møller";
                 health = 100;
                 stamina = 100;
                 drunk = 100;
@@ -41,7 +41,7 @@ namespace GameJam.Character
         public static void Display_Stats()
         {
             Console.Clear();
-            Console.WriteLine("Your name are: " + name);
+            Console.WriteLine("Your name are: " + Name);
             Beautifier.CoolBar(health, stamina, drunk);
         }
 

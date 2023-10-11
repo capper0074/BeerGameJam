@@ -24,21 +24,36 @@ namespace GameJam.Levels
 
         public static void VendorShop()
         {
-            Beautifier.CoolWrite("white", $"Narrator: ");
-            //Beautifier.CoolWrite("green", $"{Player.name} 
+            Beautifier.CoolWrite("green", "Narrator: ");
+            Beautifier.CoolWrite("white", $"{Player.Name} ser lidl");
+
+            string playerChoice = Beautifier.CoolMenu("Vil du købe noget?", "Ja", "Nej");
+
+            if (playerChoice == "Ja")
+            {
+                throw new NotImplementedException();
+            }
+            else if (playerChoice == "Nej")
+            {
+                Console.WriteLine("Tak for besøget");
+            }
         }
 
         public static void VendorPerson()
         {
+            Beautifier.CoolWrite("green", "Narrator: ");
+            Beautifier.CoolWrite("white", $"{Player.Name} ser en vendor");
 
+            string playerChoice = Beautifier.CoolMenu("Vil du købe noget?", "Ja", "Nej");
+
+            if (playerChoice == "Ja")
+            {
+                throw new NotImplementedException();
+            }
+            else if (playerChoice == "Nej")
+            {
+                Console.WriteLine("Tak for besøget");
+            }
         }
-
-        //metode.. 
-        //vendor intro (kan både være butik eller person, to void metoder
-        //
-        //snakker med vendor
-        //ja nej
-        //hvis ja 
-        //hvis nej
     }
 }

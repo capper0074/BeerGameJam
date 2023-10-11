@@ -15,11 +15,13 @@ namespace GameJam.Levels
         public static void StartIntro()
         {
             AsciiArt.Ascii_Intro();
-            Beautifier.CoolWrite("green", $"Narrator: ");
-            Beautifier.CoolWrite("white", $"{Player.name} er til fredagsbar i BeerBoxen. \n " +
-                $"Svælget bliver smurt med tonsvis af Odense Classic. Han taber lidt for mange omgange beerpong.\n " +
-                $"Øllen hober sig op og toilettet er den eneste udvej. \n " +
-                $"Det sidste han ser, er sig selv i spejlet inden han falder omkuld med sin bajer i hånden.");
+            Beautifier.CoolWrite("green", "Narrator","white", $"{Player.Name} er til fredagsbar i BeerBoxen. \n " +
+                "Svælget bliver smurt med tonsvis af Odense Classic. Han taber lidt for mange omgange beerpong.\n " +
+                "Øllen hober sig op og toilettet er den eneste udvej. \n " +
+                "Det sidste han ser, er sig selv i spejlet inden " +
+                "han falder omkuld med sin bajer i hånden.");
+            Controls.Control();
+            
              
 
         }
