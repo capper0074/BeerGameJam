@@ -13,6 +13,10 @@ namespace GameJam.GameStart
         public static void StartGame()
         {
             Player.Initialize();
+            Inventory.Initialize();
+
+
+            StartMenu.Menu();
         }
 
     }

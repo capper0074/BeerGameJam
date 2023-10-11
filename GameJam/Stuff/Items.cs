@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace GameJam.Stuff
 {
-    internal class Items
+    public class Items
     {
+
+        public string Name { get; set; }
+        public int Item_stat { get; set; }
+
+        public Items(string name, int item_stat)
+        {
+            Name = name;
+            Item_stat = item_stat;
+        }
     }
 }

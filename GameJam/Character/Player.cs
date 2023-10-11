@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GameJam.Graphic;
+using GameJam.Stuff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +11,13 @@ namespace GameJam.Character
 {
     public static class Player
     {
-        public static string Name { get; set; }
+        public static string name { get; set; }
 
-        public static int Health { get; set; }
+        public static int health { get; set; }
 
-        public static int Stamina { get; set; }
+        public static int stamina { get; set; }
 
-        public static int Drunk { get; set; }
+        public static int drunk { get; set; }
 
         private static bool isInitialize;
 
@@ -27,12 +29,42 @@ namespace GameJam.Character
             }
             else
             {
-                Name = "Møller";
-                Health = 100;
-                Stamina = 100;
+                name = "Møller";
+                health = 100;
+                stamina = 100;
+                drunk = 100;
                 isInitialize = true;
             }
 
+        }
+
+        public static void Display_Stats()
+        {
+            Console.Clear();
+            Console.WriteLine("Your name are: " + name);
+            Beautifier.CoolBar(health, stamina, drunk);
+        }
+
+        public static void Tick_Stamina()
+        {
+            stamina = stamina - 10;
+        }
+
+        public static void Eat(Items food)
+        {
+
+            if (food.Name == "cookie")
+            {
+                stamina += food.Item_stat;
+            }
+            else if (food.Name == "apple")
+            {
+                stamina += food.Item_stat;
+            }
+            else if (food.Name == "mushroom")
+            {
+                stamina -= food.Item_stat;
+            }
         }
 
 
