@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameJam.Graphic;
 using GameJam.GameStart;
+using GameJam.Character;
 
 namespace GameJam.Levels
 {
@@ -13,6 +14,7 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
+            Beautifier.CoolWrite("red", $"{Player.name}");
             string playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Show inventory");
 
             if (playerChoice == "Valg1")
@@ -21,7 +23,7 @@ namespace GameJam.Levels
             }
             else if (playerChoice == "Show inventory")
             {
-                Controls.Control();
+                Controls.Control(); 
             }
         }
     }

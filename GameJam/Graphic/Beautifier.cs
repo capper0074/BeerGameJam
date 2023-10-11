@@ -20,6 +20,11 @@ namespace GameJam.Graphic
             AnsiConsole.MarkupLine($"[{color}] {text} [/]");
         }
 
+        public static void CoolWrite(string color1, string text1, string color2, string text2)
+        {
+            AnsiConsole.MarkupLine($"[{color1}] {text1}: [/][{color2}] {text2}[/]");
+        }
+
         public static void CoolBar(int health, int stamina, int drunk)
         {
             AnsiConsole.Write(new BarChart()
