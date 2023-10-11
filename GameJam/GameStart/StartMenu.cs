@@ -1,4 +1,5 @@
-﻿using GameJam.Graphic;
+﻿using GameJam.Character;
+using GameJam.Graphic;
 using GameJam.Levels;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace GameJam.GameStart
             {
 
                 Console.Clear();
+                AsciiArt.Ascii_Name();
                 //Ascii_Art.Ascii_GameStart();
                 //Made a new menu system, so we can iteract with it.
                 var playerChoice = Beautifier.CoolMenu("Welcome to the beer game", "Start the game", "Exit the game");
@@ -27,6 +29,10 @@ namespace GameJam.GameStart
                 if (playerChoice == "Start the game")
                 {
                     Console.Clear();
+                    Console.WriteLine("Hvad hedder du?");
+                    Player.Name = Console.ReadLine();
+                    Console.Clear();
+
                     state = false;
                     Intro.StartIntro();
 
