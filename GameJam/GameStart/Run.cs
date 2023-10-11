@@ -10,6 +10,11 @@ namespace GameJam.GameStart
     public static class Run
     {
 
+        public static void Game_Tick() //For things witch need to tick when the game runs
+        {
+            Player.Tick_Stamina();
+        }
+
         public static void StartGame()
         {
             Player.Initialize();

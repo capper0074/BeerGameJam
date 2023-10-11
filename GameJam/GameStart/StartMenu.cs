@@ -28,7 +28,7 @@ namespace GameJam.GameStart
                 {
                     Console.Clear();
                     state = false;
-                    //Intro.Game_Intro();
+                    Intro.StartIntro();
 
 
                 }
