@@ -13,7 +13,8 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-            var playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Valg2");
+            Console.WriteLine();
+            string playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Valg2");
 
             if (playerChoice == "Valg1")
             {
