@@ -40,12 +40,6 @@ namespace GameJam.GameStart
                     //SendKeys.SendWait("{ENTER}");
 
                 }
-                else
-                {
-                    Console.WriteLine("---------------------------");
-                    Console.WriteLine("U entered a wrong value plz try agian");
-                    Console.Clear();
-                }
             }
         }
     }

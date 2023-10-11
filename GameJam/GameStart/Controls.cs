@@ -21,7 +21,7 @@ namespace GameJam.GameStart
                 var playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
                     .Title("What do u want to do?\n ---------------------------")
                     .PageSize(6)
-                    .AddChoices("See your stats", "Move", "See your inventory", "See your weapon", "Exit the game"));
+                    .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Exit the game"));
 
 
                 if (playerChoice == "See your stats") //See stats
@@ -29,7 +29,7 @@ namespace GameJam.GameStart
                     Player.Display_Stats();
 
                 }
-                else if (playerChoice == "Move") //Move Command
+                else if (playerChoice == "Continue") //Move Command
                 {
                     Console.Clear();
                     Run.Game_Tick();

@@ -50,10 +50,10 @@ namespace GameJam.Character
             stamina = stamina - 10;
         }
 
-        public static void Eat(Items food)
-        {
-            return null;
-        }
+        //public static void Eat(Items food)
+        //{
+        //    return null;
+        //}
 
 
 

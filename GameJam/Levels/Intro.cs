@@ -13,15 +13,15 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-            var playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Valg2");
+            string playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Show inventory");
 
             if (playerChoice == "Valg1")
             {
                 Controls.Control();
             }
-            else if (playerChoice == "Valg2")
+            else if (playerChoice == "Show inventory")
             {
-                Console.WriteLine("Umm waht");
+                Controls.Control();
             }
         }
     }
