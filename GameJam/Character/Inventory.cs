@@ -14,7 +14,7 @@ namespace GameJam.Character
 
         public void GetInventory()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); //TODO: Implement this
         }
     }
 }
