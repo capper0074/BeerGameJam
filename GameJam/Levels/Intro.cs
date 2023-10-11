@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameJam.Graphic;
 using GameJam.GameStart;
+using GameJam.Character;
 
 namespace GameJam.Levels
 {
@@ -13,17 +14,17 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-            Console.WriteLine();
-            string playerChoice = Beautifier.CoolMenu("What u want", "Valg1", "Valg2");
+            AsciiArt.Ascii_Intro();
+            Beautifier.CoolWrite("green", "Narrator","white", $"{Player.Name} er til fredagsbar i BeerBoxen. \n " +
+                "Svælget bliver smurt med tonsvis af Odense Classic. Han taber lidt for mange omgange beerpong.\n " +
+                "Øllen hober sig op og toilettet er den eneste udvej. \n " +
+                "Det sidste han ser, er sig selv i spejlet inden " +
+                "han falder omkuld med sin bajer i hånden.");
+            Controls.Control();
+            WakingUp.WakeUp();
+            
+             
 
-            if (playerChoice == "Valg1")
-            {
-                Controls.Control();
-            }
-            else if (playerChoice == "Valg2")
-            {
-                Console.WriteLine("Umm waht");
-            }
         }
     }
 }

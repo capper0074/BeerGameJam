@@ -1,4 +1,6 @@
 ﻿using GameJam.Character;
+using GameJam.Fighting;
+using GameJam.Stuff;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +19,12 @@ namespace GameJam.GameStart
 
         public static void StartGame()
         {
-            Player.Initialize();
-            Inventory.Initialize();
+            //GameItems.Initialize();
+            //LootTable.Initialize();
 
+            Player.Initialize();
+            //Enemy.Initialize();
+            //Inventory.Initialize();
 
             StartMenu.Menu();
         }
