@@ -20,7 +20,6 @@ namespace GameJam.Stuff
             }
 
 
-
             gameItemList = new List<Items>();
 
 

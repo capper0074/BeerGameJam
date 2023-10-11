@@ -20,12 +20,12 @@ namespace GameJam.GameStart
 
         public static void StartGame()
         {
-            //GameItems.Initialize();
-            //LootTable.Initialize();
+            GameItems.Initialize();
+            LootTable.Initialize();
 
             Player.Initialize();
-            //Enemy.Initialize();
-            //Inventory.Initialize();
+            Enemy.Initialize();
+            Inventory.Initialize();
 
             StartMenu.Menu();
         }

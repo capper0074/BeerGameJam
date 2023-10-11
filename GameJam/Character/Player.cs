@@ -70,6 +70,8 @@ namespace GameJam.Character
             Stamina += food.StaminaStat;
             Drunk += food.DrunkStat;
 
+            Console.Clear();
+
             Beautifier.CoolWrite("purple", $"Your Health have increased by {food.HealthStat}");
             Beautifier.CoolWrite("purple", $"Your Stamina have increased by {food.StaminaStat}");
             Beautifier.CoolWrite("purple", $"Your Drunk have increased by {food.DrunkStat}");
