@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameJam.Fighting
 {
-    internal class Combat
+    public class Combat
     {
     }
 }
