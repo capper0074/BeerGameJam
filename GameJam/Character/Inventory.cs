@@ -34,11 +34,11 @@ namespace GameJam.Character
                 }
 
                 //TEST
-                //var temp = (LootTable.GetDrops(3));
-                //foreach (var item in temp)
-                //{
-                //    inventory.Add(item);
-                //}
+                var temp = (LootTable.GetDrops(3));
+                foreach (var item in temp)
+                {
+                    inventory.Add(item);
+                }
 
                 Items empty_slot = new Items("Empty_Slot", 0, 0, 0, true);
 

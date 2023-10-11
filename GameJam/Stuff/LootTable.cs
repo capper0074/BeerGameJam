@@ -9,7 +9,7 @@ namespace GameJam.Stuff
 {
     public static class LootTable
     {
-        private static List<Items> Drops;
+        private static List<Items> Drops = new();
 
         private static bool isInitialized;
 
@@ -22,11 +22,11 @@ namespace GameJam.Stuff
 
             if (!isInitialized)
             {
-                if (GameItems.gameItemList.Count > 0) 
+                if (GameItems.isInitialized) 
                 {
-                    for (int i = 0; i < GameItems.gameItemList.Count; i++)
+                    foreach (Items item in GameItems.gameItemList)
                     {
-                        Drops.Add(GameItems.gameItemList[i]);
+                        Drops.Add(item);
                     }
                 }
                 else
@@ -43,11 +43,11 @@ namespace GameJam.Stuff
             List<Items> temp = new List<Items>();
 
             Random random = new();
-            if (Drops.Count == 0)
+            if (Drops.Count == 0 || Drops == null)
             {
                 for (int i = 0; i < amount; i++)
                 {
-                    Drops.Add(GameItems.gameItemList[random.Next(amount)]);
+                    Drops.Add(GameItems.gameItemList[random.Next(GameItems.gameItemList.Count)]);
                 }
                 temp = Drops;
 
@@ -59,7 +59,7 @@ namespace GameJam.Stuff
 
                 for (int i = 0; i < amount; i++)
                 {
-                    Drops.Add(GameItems.gameItemList[random.Next()]);
+                    Drops.Add(GameItems.gameItemList[random.Next(GameItems.gameItemList.Count)]);
                 }
                 temp = Drops;
 

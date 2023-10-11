@@ -8,7 +8,7 @@ namespace GameJam.Stuff
 {
     public static class GameItems
     {
-        private static bool isInitialized;
+        public static bool isInitialized;
 
         public static List<Items> gameItemList {  get; private set; }
 
