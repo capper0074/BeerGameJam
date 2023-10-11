@@ -19,7 +19,7 @@ namespace GameJam.Levels
 
             if (playerChoice == "Valg1")
             {
-                Controls.Control();
+                PrinterLokale.TalkToJan();
             }
             else if (playerChoice == "Show inventory")
             {
