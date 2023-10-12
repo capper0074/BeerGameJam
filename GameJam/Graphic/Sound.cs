@@ -16,6 +16,11 @@ namespace GameJam.Graphic
             player.controls.play();
         }
 
+        public static void StopSound()
+        {
+            player.controls.stop();
+        }
+
 
     }
 }
