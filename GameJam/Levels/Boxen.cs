@@ -2,6 +2,7 @@
 using GameJam.GameStart;
 using GameJam.Graphic;
 using System;
+using GameJam.Fighting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameJam.Levels;
 using Spectre.Console;
+using GameJam.Stuff;
 
 namespace GameJam.Levels
 {
@@ -22,10 +24,12 @@ namespace GameJam.Levels
             string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor");
             if (playerChoice == "Gå over til Baren")
             {
+                //No Control here
                 Bar();
             }
             else if (playerChoice == "Gå udenfor")
             {
+                Controls.Control();
                 Outside.GoOutside();
             }
         }
@@ -55,7 +59,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvad er det der dufter sådan?");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sounds*");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sniff*");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for.... Odense Classic!!");
             Console.ReadKey();
@@ -115,8 +119,9 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Måske jeg kan nuppe en fra baren?");
             Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "Alti' en god idé med en øl, du er nu i et Open World.");
+            Beautifier.CoolWrite("green", "Narrator", "White", "Alti' en god idé med en øl.");
             Console.ReadKey();
+            Beautifier.CoolWrite("green","Narrator","white","*Du har nu fri tøjler til at vælge lige der hvor ");
             Beautifier.CoolWrite("green", "Narrator", "White", "Det vil sige du kan gå hen til baren, eller.....?");
             Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "eller...? hvad, afslut din sætning");
             Console.ReadKey();
@@ -127,8 +132,6 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("blue", $"Blue", "White", "havde lige munden fuld af din mor, men go on");
             Console.ReadKey();
             Beautifier.CoolWrite("green", "Narrator", "White", "*suk* ....");
-            Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "White", "så er 4th wall slået fra.. lorte developers");
             Console.ReadKey();
             Beautifier.CoolWrite("green", "Narrator", "White", "Hvor kom jeg fra.. nå ja, eller du kan gå rundt udenfor og se hvad for nogle andre områder der er adgang til");
             Console.ReadKey();
@@ -157,8 +160,9 @@ namespace GameJam.Levels
         
         public static void BarMenu()
         {
-            //Dispaly bar inventory
+            Bartender.DisplayInventory();
             Beautifier.CoolWrite("blue", "Du bevæger dig tilbage til Boxen");
+            //No Control here
             DefaultMenu();
         }
     }

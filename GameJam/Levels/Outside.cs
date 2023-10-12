@@ -25,14 +25,17 @@ namespace GameJam.Levels
             {
                 if (playerChoice == "Gå ind i bygning A")
                 {
+                    Controls.Control();
                     AByg.GoIntoAbyg();
                 }
                 else if (playerChoice == "Gå ind bygning B")
                 {
+                    Controls.Control();
                     BByg.GoIntoB();
                 }
                 else if (playerChoice == "Gå ind i Boxen")
                 {
+                    Controls.Control();
                     Boxen.GoIntoBoxen();
                 }
             }

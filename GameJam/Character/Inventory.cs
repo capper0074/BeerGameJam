@@ -27,17 +27,10 @@ namespace GameJam.Character
             {
                 foreach (var item in GameItems.gameItemList)
                 {
-                    if(item.IsStartingItem)
+                    if (item.IsStartingItem)
                     {
                         inventory.Add(item);
                     }
-                }
-
-                //TEST
-                var temp = (LootTable.GetDrops(3));
-                foreach (var item in temp)
-                {
-                    inventory.Add(item);
                 }
 
                 Items empty_slot = new Items("Empty_Slot", 0, 0, 0, true);
@@ -48,9 +41,9 @@ namespace GameJam.Character
                 }
 
                 isInitialize = true;
-                
+
             }
-            
+
         }
 
         public static void DisplayInventory()
@@ -85,7 +78,7 @@ namespace GameJam.Character
                         if (inv_index == "Empty_Slot")
                         {
                             Console.Clear();
-                            Beautifier.CoolWrite("red", "U dont have anything in that slot"); //this can add color to your text
+                            Beautifier.CoolWrite("red", "U dont have anything in that slot");
                             player_state = true;
                         }
                         else if (inv_index != "Empty_Slot")
@@ -94,8 +87,6 @@ namespace GameJam.Character
                             PickFromInventory(inventory[index]);
                             player_state = false;
                         }
-
-
                     }
                     inv_State = false;
                     Console.ReadKey();
@@ -111,22 +102,45 @@ namespace GameJam.Character
 
         public static void AddToInventory(Items item)
         {
+            bool go = true;
             for (int i = 0; i < inventory.Count; i++)
             {
-                if (inventory[i].Name == "Empty_Slot")
+                if(go)
                 {
-                    inventory.Add(item);
+                    if (inventory[i].Name == "Empty_Slot" && !inventory.Contains(item))
+                    {
+                        inventory[i] = item;
+                        Beautifier.CoolWrite("yellow", $"{item.Name} Ligger nu i dit inventar!");
+                        go = false;
+                        //Player.Money -= item.Cost
+                    }
+                    else if (inventory.Contains(item))
+                    {
+                        Beautifier.CoolWrite("red", $"{item.Name} Vi tillader ikke mere end en type genstand af gangen!");
+                        go = false;
+                    }
+                    else if (inventory[i].Name == "Empty_Slot")
+                    {
+                        Beautifier.CoolWrite("red", $"{item.Name} Der er ikke mere plads i dine lommer!");
+                        go = false;
+                    }
                 }
+
             }
         }
 
-        public static void PickFromInventory(Items item)
-        {
-            Sound.EatSound();
-            Player.Eat(item);
-            inventory.Remove(item);
-            Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
-            inventory.Add(empty_slot);
+            public static void PickFromInventory(Items item)
+            {
+                Sound.EatSound();
+                Player.Eat(item);
+                for (int i = 0; i < inventory.Count; i++) //This only works if you can only have one item per item type in your inventory
+                {
+                    if (inventory[i] == item)
+                        inventory.Insert(i, item);
+                }
+                inventory.Remove(item);
+                Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
+                inventory.Add(empty_slot);
+            }
         }
     }
-}

@@ -20,10 +20,12 @@ namespace GameJam.Levels
                 var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "Gå ind i Boxen", "Gå ind i Bygning B");
                 if (playerChoice == "Gå ind i Boxen")
                 {
+                    Controls.Control();
                     Boxen.GoIntoBoxen();
                 }
                 else if (playerChoice == "Gå ind i bygning B")
                 {
+                    Controls.Control();
                     AByg.GoIntoAbyg();
                 }
             }
