@@ -29,6 +29,7 @@ namespace GameJam.GameStart
                 if (playerChoice == "Start the game")
                 {
                     Console.Clear();
+                    Info.GameInfo();
                     Console.WriteLine("Hvad hedder du?");
                     Player.Name = Console.ReadLine();
                     Console.Clear();

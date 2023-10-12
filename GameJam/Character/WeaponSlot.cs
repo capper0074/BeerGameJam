@@ -24,7 +24,7 @@ namespace GameJam.Character
 
             if (!isInitialize)
             {
-                Weapons hands = new Weapons("Hands", 5, "Sword.PNG");
+                Weapons hands = new Weapons("Hands", 12, "Sword.PNG");
                 weapon = new Weapons(hands.Name, hands.Weapon_Attack, hands.AssetName);
                 isInitialize = true;
             }
