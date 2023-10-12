@@ -1,10 +1,12 @@
 ﻿using GameJam.Character;
+using GameJam.GameStart;
 using GameJam.Graphic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameJam.GameStart;
 
 namespace GameJam.Levels
 {
@@ -37,6 +39,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Green", "Narrator", "White", "Vores helt er nu mødt med 2 valg muligheder, \n hvad vælger han? er han en Pussy? eller går han ud og tager konflikten");
             string playerChoice = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere Rengørings Damen");
+            Controls.Control();
             if (playerChoice == "Bliv ved med at gemme dig ind på toilettet?") 
             {
                 //Rengøringsdamen går videre, uden at der sker noget.
