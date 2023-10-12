@@ -17,7 +17,7 @@ namespace GameJam.Levels
         public static bool HasBeen { get; set; }
         private static void DefaultMenu()
         {
-            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor", "Gå over til bygning A");
+            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor");
             if (playerChoice == "Gå over til Baren")
             {
                 Bar();
@@ -25,10 +25,6 @@ namespace GameJam.Levels
             else if (playerChoice == "Gå udenfor")
             {
                 Outside.GoOutside();
-            }
-            else if (playerChoice == "Gå over til bygning A")
-            {
-                AByg.GoIntoAbyg();
             }
         }
 
