@@ -57,7 +57,7 @@ namespace GameJam.GameStart
                 }
                 else if (playerChoice == "See your weapon")
                 {
-                    throw new NotImplementedException();
+                    WeaponSlot.DisplayCurrentWeapon();
                 }
                 else if (playerChoice == "Take a piss")
                 {
