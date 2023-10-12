@@ -27,7 +27,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Console.Clear();
 
-            Beautifier.CoolWrite("Green", "Narrator", "White", Player.Name + "Er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
+            Beautifier.CoolWrite("Green", "Narrator", "White", Player.Name + " Er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
             Beautifier.CoolWrite("Green", "Narrator", "White", "Han vågnede nu op lørdag morgen i Beerboxen, og kan hører nogen udenfor toiletdøren." + "\n");
 
             Beautifier.CoolWrite("Yellow", "*Bank Bank Bank*" + "\n");
