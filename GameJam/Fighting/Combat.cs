@@ -17,6 +17,7 @@ namespace GameJam.Fighting
 
         public static bool StartCombat()
         {
+            Sound.Fight();
             Console.Clear();
             Beautifier.CoolWrite("red", "Welcome to combat, hope u are ready");
 
@@ -81,6 +82,7 @@ namespace GameJam.Fighting
                             Console.Clear();
                             Console.WriteLine("U won the combat");
                             combatState = false;
+                            Sound.StopSound();
                             return true; //u won
                             
                         }
@@ -89,6 +91,7 @@ namespace GameJam.Fighting
                     {
                         Console.WriteLine("U won the combat");
                         combatState = false;
+                        Sound.StopSound();
                         return true; //u won
                         
                     }
@@ -98,6 +101,8 @@ namespace GameJam.Fighting
                 {
                     Console.WriteLine("U lose combat noob");
                     combatState = false;
+                    Sound.StopSound();
+                    Sound.LoseSound();
                     return false; //u lost
                     Console.Clear();
                     AsciiArt.Ascii_Lose();
@@ -106,6 +111,7 @@ namespace GameJam.Fighting
 
                 
             }
+            Sound.StopSound();
             return false;
 
 
