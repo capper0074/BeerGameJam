@@ -16,13 +16,13 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("green", "Narrator: ", "white", "Du går ind i printerlokalet og støder ind i Jan" );
             Console.ReadKey();
 
-            Beautifier.CoolWrite("blue", Player.name, "white", "Hvad er det du har i hånden Jan? :O");
+            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvad er det du har i hånden Jan? :O");
             Console.ReadKey();
             
             Beautifier.CoolWrite("red", "Jan: ", "white", "Jeg har en odense classic i hånden!!");
             Console.ReadKey();
             
-            Beautifier.CoolWrite("blue", Player.name, "white", "Hvad fanden laver du med min yndlingsdrink?!?!");
+            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvad fanden laver du med min yndlingsdrink?!?!");
             Console.ReadKey();
             
             Beautifier.CoolWrite("red", "Jan: ", "white", "Vil du have den, så kom og tag den");
