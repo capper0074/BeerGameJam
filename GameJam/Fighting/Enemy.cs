@@ -6,48 +6,50 @@ using System.Threading.Tasks;
 
 namespace GameJam.Fighting
 {
-    public class Enemy
+    public static class Enemy
     {
-        public string Name { get; set; }
 
-        public int Health { get; set; }
+        private static bool IsInitialized;
 
-        public static bool IsInitialized { get; set; }
+        private static List<Creatures> enemies;
 
-        private static List<Enemy> Enemies = new();
-
-        public Enemy(string name, int health)
-        {
-            Name = name;
-            Health = health;
-        }
 
         public static void Initialize()
         {
-            if (IsInitialized) return;
+            if (IsInitialized)
+            { 
+                return; 
+            }
 
-            Enemies = new List<Enemy>();
+            enemies = new List<Creatures>();
 
             if (!IsInitialized)
             {
                 IsInitialized = true;
 
-                Enemy jan = new Enemy("J'Bro", 100);
+                Creatures jan = new Creatures("J'Bro", 5, 100);
 
-                Enemy leif = new Enemy("Leif", 100);
+                Creatures leif = new Creatures("Leif", 5, 100);
 
-                Enemies.Add(leif);
-                Enemies.Add(jan);
+                enemies.Add(leif);
+                enemies.Add(jan);
             }
 
         }
 
-        public static void DisplayEnemy(Enemy enemy)
+        public static Creatures Enemy_Pick()
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(0, enemies.Count);
+            return enemies[num];
+        }
+
+        public static void DisplayEnemy()
         {
             throw new NotImplementedException(); //TODO: Implement this method to display this enemy
         }
 
-        public static void AttackEnemy(Enemy enemy)
+        public static void AttackEnemy()
         {
             throw new NotImplementedException(); //TODO: Implement this method to deal damage to an enemy
         }
