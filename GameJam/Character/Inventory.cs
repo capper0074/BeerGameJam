@@ -67,7 +67,7 @@ namespace GameJam.Character
             {
                 //Made a new menu system, so we can iteract with it.
                 var player_Answer = AnsiConsole.Prompt(new SelectionPrompt<string>()
-                    .Title("Do you want to use anything from your inventroy\n ---------------------------")
+                    .Title("Do you want to use anything from your inventory\n ---------------------------")
                     .PageSize(3)
                     .AddChoices("yes", "no"));
 

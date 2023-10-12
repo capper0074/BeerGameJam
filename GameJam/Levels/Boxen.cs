@@ -37,7 +37,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "Jeg Kalder på vagterne!" + "\n");
             Console.ReadKey();
-            Beautifier.CoolWrite("Green", "Narrator", "White", "Vores helt er nu mødt med 2 valg muligheder, \n hvad vælger han? er han en Pussy? eller går han ud og tager konflikten");
+            Beautifier.CoolWrite("Green", "Narrator", "White", "Vores helt er nu mødt med 2 valgmuligheder, \n hvad vælger han? er han en Pussy? eller går han ud og tager konflikten");
             string playerChoice = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere Rengørings Damen");
             Controls.Control();
             if (playerChoice == "Bliv ved med at gemme dig ind på toilettet?") 
