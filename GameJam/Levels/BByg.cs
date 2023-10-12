@@ -31,26 +31,31 @@ namespace GameJam.Levels
 
         public static void GoToBbyg()
         {
+
+            if (HasBeen == true)
+            {
+                DefaultMenu();
+            }
+            else if (!HasBeen)
+            {
+                #region[Narration]
+                Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor b bygningen");
+                Console.ReadKey();
+
+                Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} tænker over om det er en god ide at gå ind i b bygningen eller ej? ");
+
+                Beautifier.CoolWrite("blue", Player.Name, "white", "B bygningen er lige der, men er det nu også en god ide at gå derind?");
+                Console.ReadKey();
+                Beautifier.CoolWrite("blue", Player.Name, "white", "Hvem ved hvad der kan gemme sig derinde?");
+                Console.ReadKey();
+
+                Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
+
+
+                #endregion
+
+            }
             HasBeen = true;
-            
-            //Check if you have been here
-
-            //If you have been here give them default menu
-
-            #region[Narration]
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor b bygningen");
-            Console.ReadKey();
-
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} tænker over om det er en god ide at gå ind i b bygningen eller ej? ");
-
-            Beautifier.CoolWrite("blue", Player.Name, "white", "B bygningen er lige der, men er det nu også en god ide at gå derind?");
-            Console.ReadKey();
-            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvem ved hvad der kan gemme sig derinde?");
-            Console.ReadKey();
-
-            Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
-            #endregion //
-            //Narration if you have not been here before
         }
         public static void GoIntoB()
         {
@@ -58,6 +63,7 @@ namespace GameJam.Levels
 
 
             Beautifier.CoolWrite("white", "");
+
         }
     }
 }
