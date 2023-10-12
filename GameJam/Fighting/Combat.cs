@@ -11,6 +11,10 @@ namespace GameJam.Fighting
 {
     public static class Combat
     {
+        private static int combatRounds = 0;
+
+        private static bool combatState = true;
+
         public static bool StartCombat()
         {
             Console.Clear();
@@ -18,16 +22,18 @@ namespace GameJam.Fighting
 
             Creatures enemy = Enemy.Enemy_Pick();
 
-            bool combatState = true;
+            
 
             while(combatState == true)
             {
+                
+
                 if (Player.Health > 0)
                 {
 
                     if (enemy.Enemy_Health > 0)//Det skal være en modstander.
                     {
-                        int combatRounds = 0;
+                        
                         Console.WriteLine("The combat starts");
 
                         if(Player.Piss >= 70)
@@ -53,32 +59,46 @@ namespace GameJam.Fighting
                             Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
                             enemy.Enemy_Health -= WeaponSlot.DisplayStat();
                             Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                            Console.ReadKey();
                         }
 
-                        Console.WriteLine($"Now {enemy.Name} attacks u");
-                        Console.WriteLine($"They deal a total of {enemy.Attack_Value} damage");
-                        Player.Health -= enemy.Attack_Value;
-                        Beautifier.CoolBarCombat(Player.Health, "Player health");
+                        if (enemy.Enemy_Health > 0)
+                        {
+                            Console.WriteLine($"Now {enemy.Name} attacks u");
+                            Console.WriteLine($"They deal a total of {enemy.Attack_Value} damage");
+                            Player.Health -= enemy.Attack_Value;
+                            Beautifier.CoolBarCombat(Player.Health, "Player health");
+                            Console.ReadKey();
 
+                            Console.WriteLine("This was round: " + combatRounds);
+                            Console.ReadKey();
+                            Console.Clear();
+                            combatRounds += 1;
+                        }
 
-                        Console.WriteLine("This was round: " + combatRounds);
-                        Console.ReadKey();
-                        Console.Clear();
-                        combatRounds++;
+                        else if (enemy.Enemy_Health <= 0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("U won the combat");
+                            combatState = false;
+                            return true; //u won
+                            
+                        }
                     }
                     else
                     {
                         Console.WriteLine("U won the combat");
-                        return true; //u won
                         combatState = false;
+                        return true; //u won
+                        
                     }
 
                 }
                 else
                 {
                     Console.WriteLine("U lose combat noob");
-                    return false; //u lost
                     combatState = false;
+                    return false; //u lost
                     Console.Clear();
                     AsciiArt.Ascii_Lose();
                     StartMenu.Menu();
