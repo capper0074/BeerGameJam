@@ -12,18 +12,31 @@ namespace GameJam.Levels
     public static class PrinterLokale
     {
         public static bool HasBeen { get; set; }
+
+        public static void DefaultMenu()
+        {
+            var playerChoice = Beautifier.CoolMenu("Du befinder dig inde i printer lokalet", "Gå tilbage", "Snak med Jan");
+            if (playerChoice == "Gå tilbage")
+            {
+                Boxen.DefaultMenu();
+            }
+            else if (playerChoice == "Snak med Jan")
+            {
+                TalkToJan();
+            }
+        }
         public static void TalkToJan()
         {
             #region[Narration]
-            Beautifier.CoolWrite("green", "Narrator: ", "white", "Du går ind i printerlokalet og støder ind i Jan" );
+            Beautifier.CoolWrite("green", "Narrator: ", "white", "Du går ind i printerlokalet og støder ind i Jan");
             Console.ReadKey();
 
             Beautifier.CoolWrite("blue", Player.Name, "white", "Hvad er det du har i hånden Jan? :O");
             Console.ReadKey();
-            
+
             Beautifier.CoolWrite("red", "Jan: ", "white", "Jeg har en odense classic i hånden!!");
             Console.ReadKey();
-            
+
             Beautifier.CoolWrite("blue", Player.Name, "white", "Du har stjålet min drink!!");
             Console.ReadKey();
 
@@ -59,9 +72,7 @@ namespace GameJam.Levels
             else if (playerChoice == "Flæk ham (combat)")
             {
                 // Gå i combat mod jan
-                bool PlayerHasWon = true;
-
-                if (PlayerHasWon == true)
+                if (Player.PlayerHasWon == true)
                 {
                     #region[Narration]
                     Beautifier.CoolWrite("red", "Jan", "white", "NOOOOOOO, du besejrede miiiiigggg");
@@ -70,10 +81,23 @@ namespace GameJam.Levels
                 else
                 {
                     #region[Narration]
-                    Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS!!! TROEDE DU SERIØST, AT DU KUNNE VINDE OVER MIG??");
+                    Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS! DU BURDE LÆSE OP PÅ DINE LEKTIER!");
                     #endregion
                 }
             }
+        }
+
+        public static void GoIntoPrinter()
+        {
+            if (HasBeen)
+            {
+                DefaultMenu();
+            }
+            else if (!HasBeen)
+            {
+                //Jan notices you or something idk...
+            }
+            HasBeen = true;
         }
     }
 }

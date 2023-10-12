@@ -12,24 +12,20 @@ namespace GameJam.Levels
     public static class BByg
     {
         public static bool HasBeen { get; set; }
-
         public static void DefaultMenu()
         {
-            if (HasBeen)
+            var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "gå ind i Boxen", "gå ind i Bygning A");
+            if (playerChoice == "gå ind i Boxen")
             {
-                var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "gå ind i Boxen", "gå ind i Bygning A");
-                if (playerChoice == "gå ind i Boxen")
-                {
-                    Boxen.DefaultMenu();
-                }
-                else if (playerChoice == "gå ind i bygning A")
-                {
-                    AByg.GoIntoAbyg();
-                }
+                Boxen.DefaultMenu();
             }
-        }
+            else if (playerChoice == "gå ind i bygning A")
+            {
+                AByg.GoIntoAbyg();
+            }
 
-        public static void GoToBbyg()
+        }
+        public static void GoIntoB()
         {
             if (HasBeen == true)
             {
@@ -51,13 +47,6 @@ namespace GameJam.Levels
                 #endregion
             }
             HasBeen = true;
-        }
-        public static void GoIntoB()
-        {
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} siger fuck it og går ind i B-bygningen");
-
-            Beautifier.CoolWrite("white", "");
-
         }
     }
 }

@@ -18,7 +18,7 @@ namespace GameJam.Levels
 
         public static void DefaultMenu()
         {
-            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "gå over til Baren", "gå udenfor");
+            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor");
             if (playerChoice == "gå over til Baren")
             {
                 Bar();
@@ -142,8 +142,9 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "flere bajere");
                 Console.ReadKey();
-                Bar.Bartender();
                 #endregion
+                Bar();
+
             }
             else if (PlayerChoice2 == "udforsk området udenfor.")
             {
@@ -152,20 +153,29 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "You know it.");
                 Console.ReadKey();
-                Outside.GoOutside();
                 #endregion
+                Outside.GoOutside();
+
             }
         }
+
         //<-----------BAREN------------>
 
         public static void Bar()
         {
-            if (HasBeen) {  }
-            else if (!HasBeen) { VendorIntro(); }
+            if (HasBeen) { BarMenu(); }
+            else if (!HasBeen) 
+            { 
+                Beautifier.CoolCenterLine("yellow","Baren er det bedste sted på jorden, kom hid kom hid sluk din tørst");
+                BarMenu();
+            }
         }
-        public static void VendorIntro()
+        
+        public static void BarMenu()
         {
-
+            Inventory.DisplayInventory();
+            Beautifier.CoolWrite("blue", "Du bevæger dig tilbage til Boxen");
+            DefaultMenu();
         }
     }
 }
