@@ -84,8 +84,10 @@ namespace GameJam.Levels
             {
                 Beautifier.CoolWrite("green", "Narrator", "White", $"SMH der er ingen ryggrad at finde på {Player.Name}");
                 Console.ReadKey();
-                Beautifier.CoolWrite("blue", $"{Player.Name}", "", "");
+                Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
                 Console.ReadKey();
+                Beautifier.CoolWrite("","","","");
+                Consol
             }
             else if (PlayerChoice2 == "udforsk området udenfor.")
             {
