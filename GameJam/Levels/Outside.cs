@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GameJam.Character;
+using GameJam.Graphic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,6 @@ namespace GameJam.Levels
 {
     public class Outside
     {
-
+        
     }
 }
