@@ -24,8 +24,7 @@ namespace GameJam.Character
 
             if (!isInitialize)
             {
-                Weapons hands = new Weapons("Hands", 5, "Sword.PNG");
-                weapon = new Weapons(hands.Name, hands.Weapon_Attack, hands.AssetName);
+                weapon = new Weapons(GameItems.weaponList[1].Name, GameItems.weaponList[1].Weapon_Attack, GameItems.weaponList[1].AssetName);
                 isInitialize = true;
             }
         }
@@ -63,10 +62,10 @@ namespace GameJam.Character
 
         public static void DisplayCurrentWeapon()
         {
-            Console.WriteLine("This is your current weapon: " + weapon.Name + " And it's stats are: " + weapon.Weapon_Attack);
+            Console.WriteLine("Dette er dit våben: " + weapon.Name + ", dit våbens styrke er: " + weapon.Weapon_Attack);
 
             // Load an image
-            var image = new CanvasImage(@"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\SpriteAssets\" + weapon.AssetName);
+            var image = new CanvasImage(@"C:\Users\Niko\Desktop\GameJam\BeerGameJam\GameJam\Graphic\SpriteAssets\" + weapon.AssetName + ".png");
 
             // Set the max width of the image.
             // If no max width is set, the image will take

@@ -30,7 +30,7 @@ namespace GameJam.GameStart
                 {
                     Console.Clear();
                     Info.GameInfo();
-                    Console.WriteLine("Hvad hedder du?");
+                    Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
                     Player.Name = Console.ReadLine();
                     Console.Clear();
 

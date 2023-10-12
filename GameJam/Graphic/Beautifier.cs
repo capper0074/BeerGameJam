@@ -85,6 +85,15 @@ namespace GameJam.Graphic
             return playerChoice;
         }
 
+        public static void CoolCenterLine(string text, string color)
+        {
+            var rule = new Rule($"[{color}]{text}[/]");
+            rule.Style = Style.Parse("black");
+
+            rule.Centered();
+
+            AnsiConsole.Write(rule);
+        }
 
     }
 }

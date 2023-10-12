@@ -22,7 +22,7 @@ namespace GameJam.GameStart
         public static void StartGame()
         {
             GameItems.Initialize();
-            //LootTable.Initialize();
+            LootTable.Initialize();
             WeaponSlot.Initialize();
             Player.Initialize();
             Enemy.Initialize();
