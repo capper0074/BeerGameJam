@@ -18,25 +18,25 @@ namespace GameJam.Graphic
 
         public static void Fight()
         {
-            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\Boss_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.URL = @"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\Sounds\Boss_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
 
         public static void BeerRun()
         {
-            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\BeerRun_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.URL = @"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\Sounds\BeerRun_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
 
         public static void EatSound()
         {
-            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\Eating_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.URL = @"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\Sounds\Eating_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
 
         public static void LoseSound()
         {
-            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\Lose_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.URL = @"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\Sounds\Lose_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
 
