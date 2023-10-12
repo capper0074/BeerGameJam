@@ -11,7 +11,7 @@ namespace GameJam.Character
 {
     internal static class Inventory
     {
-        private static List<Items> inventory; //List containing the type Items
+        public static List<Items> inventory { get; private set; } //List containing the type Items
         private static bool isInitialize;
         public static void Initialize()
         {
@@ -80,6 +80,14 @@ namespace GameJam.Character
                     {
                         int index = inventory.FindIndex(item => item.Name == inv_index);
                         PickFromInventory(inventory[index]);
+
+                        Beautifier.CoolLine();
+                        Beautifier.CoolCenterLine("Dit inventar ser sådan her ud!", "blue");
+                        Beautifier.CoolLine();
+                        for (int i = 0; i < inventory.Count; i++)
+                        {
+                            Console.WriteLine(inventory[i].Name + " || " + inventory[i].HealthStat + " || " + inventory[i].StaminaStat + " || " + inventory[i].DrunkStat);
+                        }
                     }
                     Console.ReadKey();
                     Console.Clear();
@@ -102,18 +110,18 @@ namespace GameJam.Character
                     if (inventory[i].Name == "Empty_Slot" && !inventory.Contains(item))
                     {
                         inventory[i] = item;
-                        Beautifier.CoolWrite("yellow", $"{item.Name} Ligger nu i dit inventar!");
+                        Beautifier.CoolCenterLine($"{item.Name} Ligger nu i dit inventar!", "blue");
                         go = false;
                         //Player.Money -= item.Cost
                     }
                     else if (inventory.Contains(item))
                     {
-                        Beautifier.CoolWrite("red", $"{item.Name} Vi tillader ikke mere end en type genstand af gangen!");
+                        Beautifier.CoolCenterLine($"Vi tillader ikke mere end en type genstand af gangen!", "red");
                         go = false;
                     }
                     else if (inventory[i].Name == "Empty_Slot")
                     {
-                        Beautifier.CoolWrite("red", $"{item.Name} Der er ikke mere plads i dine lommer!");
+                        Beautifier.CoolCenterLine($"Der er ikke mere plads i dine lommer!", "red");
                         go = false;
                     }
                 }
@@ -126,6 +134,7 @@ namespace GameJam.Character
             Sound.EatSound();
             Player.Eat(item);
             inventory.Remove(item);
+
             Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
             inventory.Add(empty_slot);
         }

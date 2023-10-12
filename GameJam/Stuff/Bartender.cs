@@ -48,7 +48,10 @@ namespace GameJam.Stuff
                         {
                             Inventory.AddToInventory(item);
                         }
-
+                    for (int i = 0; i < Inventory.inventory.Count; i++)
+                    {
+                        Console.WriteLine(Inventory.inventory[i].Name + " || " + Inventory.inventory[i].HealthStat + " || " + Inventory.inventory[i].StaminaStat + " || " + Inventory.inventory[i].DrunkStat);
+                    }
                     Console.ReadKey();
                     Console.Clear();
                 }
