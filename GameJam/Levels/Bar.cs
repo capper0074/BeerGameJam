@@ -14,8 +14,9 @@ namespace GameJam.Levels
     {
       public static void Bartender() 
         {
+            #region[Narration]
             Beautifier.CoolWrite("green","","White","");
+            #endregion
         }
-
     }
 }

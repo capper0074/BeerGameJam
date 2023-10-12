@@ -13,6 +13,7 @@ namespace GameJam.Levels
     {
         public static void TalkToJan()
         {
+            #region[Narration]
             Beautifier.CoolWrite("green", "Narrator: ", "white", "Du går ind i printerlokalet og støder ind i Jan" );
             Console.ReadKey();
 
@@ -33,10 +34,11 @@ namespace GameJam.Levels
 
             Beautifier.CoolWrite("red", "Jan: ", "white", "DU HAR ÆNDRET I MINE UNIT TESTS, OG NU SKAL DU MÆRKE KONSEKVENSERNE!!");
             Console.ReadKey();
-
+            #endregion
             string playerChoice = Beautifier.CoolMenu("Hvad har du tænkt dig at gøre?", "Flygt", "Flæk ham (combat)"); //"Flæk Ham" puts you into combat against Jan.
             if (playerChoice == "Flygt")
             {
+                #region[Narration]
                 Beautifier.CoolWrite("green", "Narrator", "white", "Jan teleporterer foran døren og forhindrer vores helt i at flygte");
                 Console.ReadKey();
 
@@ -45,12 +47,12 @@ namespace GameJam.Levels
 
                 Beautifier.CoolWrite("red", "Jan", "white", "Hvis du vil igennem, så er det MIG du skal gennem først!");
                 Console.ReadKey();
-
+                #endregion
                 //PUT HELTEN I COMBAT MOD JAN
-
+                #region[Narration]
                 Beautifier.CoolWrite("red", "Jan: ", "white", "NEEEEEEEJ DU BESEJREDE MIIIG");
                 Beautifier.CoolWrite("green", "Narrator: ", "white", "Uden sin øl, tog Jan hjem for lave flere af sine online tutorials");
-
+                #endregion
 
             }
             else if (playerChoice == "Flæk ham (combat)")
@@ -60,22 +62,17 @@ namespace GameJam.Levels
 
                 if (PlayerHasWon == true)
                 {
+                    #region[Narration]
                     Beautifier.CoolWrite("red", "Jan", "white", "NOOOOOOO, du besejrede miiiiigggg");
-
+                    #endregion
                 }
                 else
                 {
+                    #region[Narration]
                     Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS!!! TROEDE DU SERIØST, AT DU KUNNE VINDE OVER MIG??");
+                    #endregion
                 }
-
-
-
-
             }
-
-
-            
-
         }
     }
 }

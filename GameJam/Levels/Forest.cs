@@ -17,6 +17,7 @@ namespace GameJam.Levels
     {
         public static void Dystreskov() 
         {
+            #region[Narration]
             Beautifier.CoolWrite("blue", Player.Name, "White", "fuck der er mørkt her! hvem har slukket lyset..");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Råber* Er der nogen der har en lighter?!");
@@ -25,6 +26,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "");
             Console.ReadKey();
+            #endregion
         }
     }
 }

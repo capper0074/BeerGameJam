@@ -15,7 +15,7 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-
+            #region[Narration]
             AsciiArt.Ascii_Intro();
             Beautifier.CoolWrite("green", "Narrator", "white", $"\n{Player.Name} er til fredagsbar i BeerBoxen.");
             Console.ReadKey();
@@ -28,6 +28,7 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("white", "Det sidste han ser, er sig selv i spejlet inden \n " +
                 "han falder omkuld med sin bajer i hånden.");
             Console.ReadKey();
+            #endregion
             Controls.Control(); // husk at kalde Controls.Control hver gang vi skifter rum
             Boxen.WakeUp();
 

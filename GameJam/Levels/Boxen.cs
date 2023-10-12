@@ -14,8 +14,15 @@ namespace GameJam.Levels
 {
     internal static class Boxen
     {
+        public static bool HasBeen { get; set; }
+
+        public static void DefaultMenu()
+        {
+            Beautifier.CoolCenterLine("Dette område mangler at blive implementeret", "red");
+        }
         public static void WakeUp()
         {
+            #region[Narration]
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvor er jeg?");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Og fuck hvor er jeg tørstig.");
@@ -51,26 +58,31 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "\"Pant!, eller jeg kalder på vagterne!\"" + "\n");
             Console.ReadKey();
+            #endregion
             Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
             {
+                #region[Narration]
                 //Rengøringsdamen går videre, uden at der sker noget.
 
                 Beautifier.CoolWrite("green", "Narrator", "White", $"Det virker til at hun løj omkring vagterne, hun går videre og {Player.Name} er nu en tøsedreng");
-
+                #endregion
             }
             else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
+                Controls.Control();
                 //COMBAT
-                
+                #region[Narration]
                 Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
                     "\n");
+                #endregion
                 // loot drop
-                
+
             }
 
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen, b***h");
+            #region[Narration]
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Jeg ku' godt bruge en drink efter det der");
             Console.ReadKey();
@@ -94,9 +106,11 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("green", "Narrator", "White", "Hvor kom jeg fra.. nå ja, eller du kan gå rundt udenfor og se hvad for nogle andre områder der er adgang til");
             Console.ReadKey();
             Console.Clear();
+            #endregion
             string PlayerChoice2 = Beautifier.CoolMenu("", "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.", "udforsk området udenfor.");
             if (PlayerChoice2 == "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.")
             {
+                #region[Narration]
                 Beautifier.CoolWrite("green", "Narrator", "White", $"SMH der er ingen ryggrad at finde på {Player.Name}");
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
@@ -104,15 +118,17 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("blue",$"{Player.Name}","White","flere bajere");
                 Console.ReadKey();
                 Bar.Bartender();
+                #endregion
             }
             else if (PlayerChoice2 == "udforsk området udenfor.")
             {
+                #region[Narration]
                 Beautifier.CoolWrite("green", "Narrator", "White", "What a rebel.");
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "You know it.");
                 Console.ReadKey();
-                Outside.Weoutside();
-
+                Outside.WeOutside();
+                #endregion
             }
         }
     }
