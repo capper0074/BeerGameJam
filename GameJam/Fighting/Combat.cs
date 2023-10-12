@@ -36,7 +36,7 @@ namespace GameJam.Fighting
                         Beautifier.CoolBarCombat(Player.Health, "Player health");
 
                         Console.WriteLine("This was round: " + combatRounds);
-
+                        Console.ReadKey();
                         combatRounds++;
                     }
                     else
