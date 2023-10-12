@@ -12,12 +12,28 @@ namespace GameJam.Levels
     public static class AByg 
     {
         public static bool HasBeen { get; set; }
+
+        public static void DefaultMenu()
+        {
+            if (HasBeen)
+            {
+                var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "gå ind i Boxen", "gå ind i Bygning A");
+                if (playerChoice == "gå ind i Boxen")
+                {
+                    Boxen.DefaultMenu();
+                }
+                else if (playerChoice == "gå ind i bygning A")
+                {
+                    AByg.GoIntoAbyg();
+                }
+            }
+        }
         public static void GoIntoAbyg()
         {
-            if (!BByg.HasBeen)
+
+            if (HasBeen)
             {
-                Beautifier.CoolCenterLine("Du har ikke adgang til bygning-A. . .", "red");
-                BByg.DefaultMenu();
+                DefaultMenu();
             }
 
             HasBeen = true;
@@ -57,19 +73,6 @@ namespace GameJam.Levels
                 #endregion
                 //Nyt sted her skal kaldes
             }
-        }
-        public static void GoToCanteen()
-        {
-            #region[Narration]
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} vælger at gå ind i A-bygningen og fortsætte til kantinen");
-            Beautifier.CoolWrite("white", "");
-            #endregion
-        }
-        public static void GoBack()
-        {
-            #region[Narration]
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} fortryder og vælger at gå tilbage");
-            #endregion
         }
 
         //vi skal narrate at player er uden for. skal over til aByg

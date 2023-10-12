@@ -49,13 +49,12 @@ namespace GameJam.Levels
             Console.ReadKey();
 
             Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
-            #endregion //
+            #endregion 
             //Narration if you have not been here before
         }
         public static void GoIntoB()
         {
             Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} siger fuck it og går ind i B-bygningen");
-
 
             Beautifier.CoolWrite("white", "");
         }
