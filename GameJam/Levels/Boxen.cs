@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameJam.Levels
 {
-    internal static class WakingUp
+    internal static class Boxen
     {
         public static void WakeUp()
 

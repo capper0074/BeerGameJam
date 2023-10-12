@@ -12,7 +12,7 @@ namespace GameJam.Graphic
         {
             WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
 
-            player.URL = @"C:\Users\Casper\Source\Repos\BeerGameJam\GameJam\Graphic\Sounds\I_WILL_KILL.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\I_WILL_KILL.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
     }

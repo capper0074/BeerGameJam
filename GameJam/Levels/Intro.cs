@@ -24,7 +24,7 @@ namespace GameJam.Levels
                 "Det sidste han ser, er sig selv i spejlet inden " +
                 "han falder omkuld med sin bajer i hånden.");
             Controls.Control(); // husk at kalde Controls.Control hver gang vi skifter rum
-            WakingUp.WakeUp();
+            Boxen.WakeUp();
             
              
 
