@@ -25,16 +25,16 @@ namespace GameJam.Graphic
             AnsiConsole.MarkupLine($"[{color1}] {text1}: [/][{color2}] {text2}[/]");
         }
 
-        public static void CoolBar(int health, int stamina, int 
-            drunk)
+        public static void CoolBar(int health, int stamina, int drunk, int piss)
         {
             AnsiConsole.Write(new BarChart()
                 .Width(60)
                 .Label("[green bold underline]Your stats[/]")
                 .CenterLabel()
                 .AddItem("Health", health, Color.Red)
-                .AddItem("Stamina", stamina, Color.Yellow1)
-                .AddItem("Drunk", drunk, Color.Purple_1));
+                .AddItem("Stamina", stamina, Color.Blue)
+                .AddItem("Drunk", drunk, Color.Purple_1)
+                .AddItem("Piss", piss, Color.Yellow));
         }
 
         public static string CoolMenu(string title, string choice1, string choice2)//Method overload for 2 choices
