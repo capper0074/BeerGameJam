@@ -9,6 +9,15 @@ namespace GameJam.Graphic
 {
     public static class Beautifier
     {
+        public static void CoolPanel(string panelHeader, string panelText)
+        {
+            Console.WriteLine("\n \n");
+            var panel = new Panel(panelText);
+            panel.Header(panelHeader);
+            panel.BorderColor(Color.Red3);
+            AnsiConsole.Write(panel);
+        }
+
         public static void CoolLine()
         {
             var rule = new Rule();
