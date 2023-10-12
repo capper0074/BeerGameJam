@@ -8,5 +8,6 @@ namespace GameJam.Levels
 {
     internal class Outside
     {
+
     }
 }

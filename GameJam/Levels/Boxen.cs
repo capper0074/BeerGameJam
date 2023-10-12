@@ -50,18 +50,19 @@ namespace GameJam.Levels
             {
                 //Vagterne kommer ikke, og du kæmper kun mod Rengøringsdamen.
                 //Trigger Combat
-                Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "    Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " + 
+                Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "    Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
                     "\n");
                 // loot drop
             }
 
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen" );
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "Jeg ku' godt bruge en drink efter det der" );
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Jeg ku' godt bruge en drink efter det der");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Måske jeg kan nuppe en fra baren?");
             Console.ReadKey();
-            Beautifier.CoolWrite("green","Narrator","White", Player.Name + "      ");
+            Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "      ");
 
         }
+    }
 }
