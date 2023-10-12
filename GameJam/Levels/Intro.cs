@@ -15,7 +15,6 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-            Sound.Test();
 
             AsciiArt.Ascii_Intro();
             Beautifier.CoolWrite("green", "Narrator", "white", $"\n{Player.Name} er til fredagsbar i BeerBoxen.");

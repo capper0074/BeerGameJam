@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameJam.Character;
+using GameJam.GameStart;
 
 namespace GameJam.Levels
 {
-    internal class BByg
+    public static class BByg
     {
+
     }
 }

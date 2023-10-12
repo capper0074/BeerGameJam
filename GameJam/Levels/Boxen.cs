@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using GameJam.GameStart;
+using GameJam.Fighting;
 
 namespace GameJam.Levels
 {
@@ -46,13 +47,22 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("green", "Narrator", "White", $"Det virker til at hun løj omkring vagterne, hun går videre og {Player.Name} er nu en tøsedreng");
 
             }
-            else if (playerChoice1 == "Gå ud og konfrontere Rengørings Damen")
+            else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
-                //Vagterne kommer ikke, og du kæmper kun mod Rengøringsdamen.
-                //Trigger Combat
-                Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
-                    "\n");
-                // sejrs lyd
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
+                {
+                    Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
+                                        "\n");
+                }
+                else if(combatState == false)
+                {
+                    Console.Clear();
+                    AsciiArt.Ascii_Lose();
+                    StartMenu.Menu();
+                }
+
                 // loot drop
             }
 
