@@ -18,7 +18,7 @@ namespace GameJam.GameStart
 
             while (state == true)
             {
-
+                Sound.BeerRun();
                 Console.Clear();
                 AsciiArt.Ascii_Name();
                 //Ascii_Art.Ascii_GameStart();
@@ -29,10 +29,10 @@ namespace GameJam.GameStart
                 if (playerChoice == "Start the game")
                 {
                     Console.Clear();
+                    Info.GameInfo();
                     Console.WriteLine("Hvad hedder du?");
                     Player.Name = Console.ReadLine();
                     Console.Clear();
-
                     state = false;
                     Intro.StartIntro();
 

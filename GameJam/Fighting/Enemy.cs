@@ -43,15 +43,5 @@ namespace GameJam.Fighting
             int num = rnd.Next(0, enemies.Count);
             return enemies[num];
         }
-
-        public static void DisplayEnemy()
-        {
-            throw new NotImplementedException(); //TODO: Implement this method to display this enemy
-        }
-
-        public static void AttackEnemy()
-        {
-            throw new NotImplementedException(); //TODO: Implement this method to deal damage to an enemy
-        }
     }
 }

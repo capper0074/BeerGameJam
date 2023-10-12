@@ -122,6 +122,7 @@ namespace GameJam.Character
 
         public static void PickFromInventory(Items item)
         {
+            Sound.EatSound();
             Player.Eat(item);
             inventory.Remove(item);
             Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);

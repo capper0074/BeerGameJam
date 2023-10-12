@@ -6,19 +6,36 @@ using System.Threading.Tasks;
 using GameJam.Character;
 using GameJam.GameStart;
 using GameJam.Graphic;
+using GameJam.Stuff;
+using GameJam.Fighting;
+
+
 
 
 namespace GameJam.Levels
 {
-    internal static class Outside
+    public static class Outside
     {
-        public static void Weoutside() 
+        public static void Weoutside()
         {
             Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "  Er nu kommet udenfor, Der er flere forskellige muligheder her.");
-            // lav 2 options A bygning/ Skoven
-            string playerChoice = Beautifier.CoolMenu("","","");
-            if (playerChoice == "" ) 
-            { 
+            Console.ReadKey();
+ 
+            string playerChoice = Beautifier.CoolMenu("", "Gå mod A-bygning", "Gå mod den dystre skov");
+            if (playerChoice == "Gå mod A-bygning")
+            {
+                Console.Clear();
+                Beautifier.CoolWrite("Green", "Narrator", "White", $"Prøv bare at se {Player.Name} what a G Det fortjener en bajer");
+                Controls.Control();
+                AByg.GoIntoAbyg();
+            }
+            else if (playerChoice == "Gå mod den dystre skov")
+            {
+                Console.Clear();
+                Beautifier.CoolWrite("Green", "Narrator", "White", $"Oooooh spooky, {Player.Name} tænker vi skal få noget liquid courage indenbords før vi fortsætter ");
+                Controls.Control();
+                Forest.Dystreskov();
+
             }
         }
     }
