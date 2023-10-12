@@ -15,21 +15,24 @@ namespace GameJam.Levels
     internal static class Boxen
     {
         public static bool HasBeen { get; set; }
-
-        public static void DefaultMenu()
+        private static void DefaultMenu()
         {
-            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor");
-            if (playerChoice == "gå over til Baren")
+            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor", "Gå over til bygning A");
+            if (playerChoice == "Gå over til Baren")
             {
                 Bar();
             }
-            else if (playerChoice == "gå udenfor")
+            else if (playerChoice == "Gå udenfor")
             {
                 Outside.GoOutside();
             }
+            else if (playerChoice == "Gå over til bygning A")
+            {
+                AByg.GoIntoAbyg();
+            }
         }
 
-        public static void GoToBoxen()
+        public static void GoIntoBoxen()
         {
             if (HasBeen)
             {
@@ -85,6 +88,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             #endregion
             Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
+            
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
             {
@@ -132,31 +136,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Console.Clear();
             #endregion
-            string PlayerChoice2 = Beautifier.CoolMenu("", "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.", "udforsk området udenfor.");
-            if (PlayerChoice2 == "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.")
-            {
-                #region[Narration]
-                Beautifier.CoolWrite("green", "Narrator", "White", $"SMH der er ingen ryggrad at finde på {Player.Name}");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "flere bajere");
-                Console.ReadKey();
-                #endregion
-                Bar();
-
-            }
-            else if (PlayerChoice2 == "udforsk området udenfor.")
-            {
-                #region[Narration]
-                Beautifier.CoolWrite("green", "Narrator", "White", "What a rebel.");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "You know it.");
-                Console.ReadKey();
-                #endregion
-                Outside.GoOutside();
-
-            }
+            DefaultMenu();
         }
 
         //<-----------BAREN------------>

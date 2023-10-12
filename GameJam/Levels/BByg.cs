@@ -12,12 +12,12 @@ namespace GameJam.Levels
     public static class BByg
     {
         public static bool HasBeen { get; set; }
-        public static void DefaultMenu()
+        private static void DefaultMenu()
         {
             var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "gå ind i Boxen", "gå ind i Bygning A");
             if (playerChoice == "gå ind i Boxen")
             {
-                Boxen.DefaultMenu();
+                Boxen.GoIntoBoxen();
             }
             else if (playerChoice == "gå ind i bygning A")
             {

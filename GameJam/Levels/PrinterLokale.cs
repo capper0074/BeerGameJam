@@ -18,7 +18,7 @@ namespace GameJam.Levels
             var playerChoice = Beautifier.CoolMenu("Du befinder dig inde i printer lokalet", "Gå tilbage", "Snak med Jan");
             if (playerChoice == "Gå tilbage")
             {
-                Boxen.DefaultMenu();
+                AByg.GoIntoAbyg();
             }
             else if (playerChoice == "Snak med Jan")
             {
