@@ -19,6 +19,7 @@ namespace GameJam.GameStart
 
             while (state == true)
             {
+                
                 if (Player.Piss >= 20)
                 {
                     Beautifier.CoolLine();
@@ -35,7 +36,7 @@ namespace GameJam.GameStart
                         .PageSize(6)
                         .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Exit the game"));
                 }
-
+                Console.Clear();
 
 
                 if (playerChoice == "See your stats") //See stats

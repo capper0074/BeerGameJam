@@ -16,6 +16,7 @@ namespace GameJam.GameStart
         {
             Player.Tick_Stamina();
             Player.Tick_Piss();
+            Player.Tick_PissDamage();
         }
 
         public static void StartGame()
