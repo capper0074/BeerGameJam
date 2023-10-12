@@ -21,6 +21,11 @@
 
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.47.0" />
+    <PackageReference Include="Spectre.Console.ImageSharp" Version="0.47.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Graphic\SpriteAssets\" />
   </ItemGroup>
 
 </Project>
