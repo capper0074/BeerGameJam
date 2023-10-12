@@ -30,15 +30,6 @@ namespace GameJam.Character
                 weapon = new Weapons(GameItems.weaponList[1].Name, GameItems.weaponList[1].Weapon_Attack, GameItems.weaponList[1].AssetName);
                 isInitialize = true;
             }
-            string temp = Path.GetFullPath("SpriteAssets");
-            string[] array = temp.Split('\\');
-            string stringRemove;
-
-
-            array = array.Where(val => val != "bin" && val != "Debug" && val != "net6.0" && val != "SpriteAssets").ToArray();
-
-
-            path = string.Join("\\", array);
         }
 
         public static void SwitchWeapon(Weapons newWeapon)
@@ -77,7 +68,7 @@ namespace GameJam.Character
             Console.WriteLine("Dette er dit våben: " + weapon.Name + ", dit våbens styrke er: " + weapon.Weapon_Attack);
 
             // Load an image
-            var image = new CanvasImage($@"{path}\Graphic\SpriteAssets\{weapon.AssetName}.png");
+            var image = new CanvasImage($@"{weapon.FilePath}\{weapon.AssetName}.png");
 
             // Set the max width of the image.
             // If no max width is set, the image will take

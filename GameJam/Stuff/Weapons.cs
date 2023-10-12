@@ -10,6 +10,8 @@ namespace GameJam.Stuff
     {
         public string Name { get; set; }
 
+        public string FilePath { get; set; } = "../../../Graphic\\SpriteAssets";
+
         public string AssetName { get; set; }
 
         public int Weapon_Attack { get; set; }
