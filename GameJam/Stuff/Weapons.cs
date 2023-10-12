@@ -8,5 +8,13 @@ namespace GameJam.Stuff
 {
     public class Weapons
     {
+        public string Name { get; set; }
+        public int Weapon_Attack { get; set; }
+
+        public Weapons(string name, int weapon_Attack)
+        {
+            Name = name;
+            Weapon_Attack = weapon_Attack;
+        }
     }
 }
