@@ -23,6 +23,7 @@ namespace GameJam.Levels
                 "Øllen hober sig op og toilettet er den eneste udvej. \n " +
                 "Det sidste han ser, er sig selv i spejlet inden " +
                 "han falder omkuld med sin bajer i hånden.");
+            Console.ReadKey();
             Controls.Control(); // husk at kalde Controls.Control hver gang vi skifter rum
             Boxen.WakeUp();
             

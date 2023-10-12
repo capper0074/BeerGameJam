@@ -13,6 +13,9 @@ namespace GameJam.GameStart
     {
         public static void Control() //Should popup when the player needs to do something
         {
+            Console.Clear();
+            AsciiArt.Ascii_Stats();
+
             bool state = true;
 
             string playerChoice = "";
