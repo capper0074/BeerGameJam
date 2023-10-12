@@ -40,6 +40,18 @@ namespace GameJam.Graphic
             player.controls.play();
         }
 
+        public static void Waiting_Sound()
+        {
+            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\Waiting_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.controls.play();
+        }
+
+        public static void Peeing_Sound()
+        {
+            player.URL = @"C:\Users\cappe\source\repos\BeerGameJam\GameJam\Graphic\Sounds\Peeing_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
+            player.controls.play();
+        }
+
         public static void StopSound()
         {
             player.controls.stop();
