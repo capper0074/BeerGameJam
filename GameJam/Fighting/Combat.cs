@@ -59,7 +59,7 @@ namespace GameJam.Fighting
                                 {
                                     Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                     Console.WriteLine($"You are too drunk to hit {enemy.Name} so u miss him");
-                                    enemy.Enemy_Health -= 0;
+                                    enemy.Enemy_Health -= 0; //Is this necessary?
                                     Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
                                     Console.ReadKey();
                                 }
@@ -115,10 +115,10 @@ namespace GameJam.Fighting
                             Console.WriteLine("This was round: " + combatRounds);
                             Console.ReadKey();
                             Console.Clear();
-                            combatRounds += 1;
+                            combatRounds++;
                         }
 
-                        else if (enemy.Enemy_Health <= 0)
+                        else if (enemy.Enemy_Health <= 0) //Is this necessary?
                         {
                             Console.Clear();
                             Console.WriteLine("U won the combat");
@@ -147,10 +147,10 @@ namespace GameJam.Fighting
                     return false; //u lost
                     Console.Clear();
                     AsciiArt.Ascii_Lose();
+                    Console.ReadKey(); //Wait for input so player can see the beautiful art
                     StartMenu.Menu();
                 }
 
-                
             }
             Sound.StopSound();
             return false;

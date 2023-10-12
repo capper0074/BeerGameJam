@@ -85,6 +85,26 @@ namespace GameJam.Graphic
             return playerChoice;
         }
 
+        public static string CoolMenu(string title, string choice1, string choice2, string choice3, string choice4, string choice5)//Method overload for 4 choices
+        {
+            CoolLine();
+            string playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                .Title($"{title}")
+                .PageSize(5)
+                .AddChoices(choice1, choice2, choice3, choice4, choice5));
+            return playerChoice;
+        }
+
+        public static string CoolMenu(string title, string choice1, string choice2, string choice3, string choice4, string choice5, string choice6)//Method overload for 4 choices
+        {
+            CoolLine();
+            string playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                .Title($"{title}")
+                .PageSize(5)
+                .AddChoices(choice1, choice2, choice3, choice4, choice5, choice5));
+            return playerChoice;
+        }
+
         public static void CoolCenterLine(string text, string color)
         {
             var rule = new Rule($"[{color}]{text}[/]");
