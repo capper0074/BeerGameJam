@@ -66,7 +66,7 @@ namespace GameJam.Character
             Console.WriteLine("This is your current weapon: " + weapon.Name + " And it's stats are: " + weapon.Weapon_Attack);
 
             // Load an image
-            var image = new CanvasImage(@"C:\Users\Niko\Desktop\GameJam\BeerGameJam\GameJam\Graphic\SpriteAssets\"+weapon.AssetName);
+            var image = new CanvasImage(@"C:\Users\emilm\Desktop\Programmering\Datamatiker - RP\BeerGameJam\GameJam\Graphic\SpriteAssets\" + weapon.AssetName);
 
             // Set the max width of the image.
             // If no max width is set, the image will take

@@ -16,12 +16,13 @@ namespace GameJam.GameStart
         {
             Player.Tick_Stamina();
             Player.Tick_Piss();
+            Player.Tick_PissDamage();
         }
 
         public static void StartGame()
         {
             GameItems.Initialize();
-            LootTable.Initialize();
+            //LootTable.Initialize();
             WeaponSlot.Initialize();
             Player.Initialize();
             Enemy.Initialize();

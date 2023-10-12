@@ -27,9 +27,15 @@ namespace GameJam.Fighting
                     {
                         int combatRounds = 0;
                         Console.WriteLine("The combat starts");
+                        Console.WriteLine($"U use your {WeaponSlot.DisplayName} to attack {enemy.Name}");
+                        Console.WriteLine($"U deal {WeaponSlot.DisplayStat} to {enemy.Name}");
+                        Beautifier.CoolBarCombat(enemy.Enemy_Health,"Enemy health");
 
-                        Console.WriteLine();
+                        Console.WriteLine($"Now {enemy.Name} attacks u");
+                        Console.WriteLine($"They deal a total of {enemy.Attack_Value} damage");
+                        Beautifier.CoolBarCombat(Player.Health, "Player health");
 
+                        Console.WriteLine("This was round: " + combatRounds);
 
                         combatRounds++;
                     }

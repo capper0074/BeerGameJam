@@ -60,6 +60,14 @@ namespace GameJam.Character
             Piss += 1 * (Drunk / 10);
         }
 
+        public static void Tick_PissDamage()
+        {
+            if(Piss == 100)
+            {
+                Health -= 12;
+            }
+        }
+
         public static void TakeAPiss()
         {
             Piss = 0;
