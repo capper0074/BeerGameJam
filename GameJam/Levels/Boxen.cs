@@ -162,7 +162,7 @@ namespace GameJam.Levels
         {
             Bartender.DisplayInventory();
             Beautifier.CoolWrite("blue", "Du bevæger dig tilbage til Boxen");
-            //No Control here
+            Controls.Control();
             DefaultMenu();
         }
     }
