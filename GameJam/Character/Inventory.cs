@@ -12,7 +12,6 @@ namespace GameJam.Character
     internal static class Inventory
     {
         private static List<Items> inventory; //List containing the type Items
-
         private static bool isInitialize;
         public static void Initialize()
         {
@@ -35,8 +34,8 @@ namespace GameJam.Character
 
                 Items empty_slot = new Items("Empty_Slot", 0, 0, 0, true);
 
-                for (int i = 0; i < 10 - inventory.Count; i++)
-                {
+                for (int i = 0; i < 3; i++) //If you use inventory for this, the for loop is going to check the inventory count every iteration which is not what we want since the inventory count changes every time
+                {                           //There are 2 starting items so it adds 3 empty slots making the inventory a 5 slot size, this has to manually changed every time it has to be changed to fit more items
                     inventory.Add(empty_slot);
                 }
 
@@ -66,29 +65,22 @@ namespace GameJam.Character
 
                 if (player_Answer == "yes")
                 {
-                    bool player_state = true;
 
-                    while (player_state == true)
+                    var inv_index = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                        .Title("Choose what u want from your inventory \n ---------------------------")
+                        .PageSize(5)
+                        .AddChoices(inventory[0].Name, inventory[1].Name, inventory[2].Name, inventory[3].Name, inventory[4].Name, inventory[4].Name)); //This has to be manually changed to fit the amount of inventory items there are otherwise it will throw an index error
+                    //Have removed the player_State while loop because it was an endless loop if the index was empty
+                    if (inv_index == "Empty_Slot")
                     {
-                        var inv_index = AnsiConsole.Prompt(new SelectionPrompt<string>()
-                            .Title("Choose what u want from your inventory \n ---------------------------")
-                            .PageSize(7)
-                            .AddChoices(inventory[0].Name, inventory[1].Name, inventory[2].Name, inventory[3].Name, inventory[4].Name, inventory[5].Name, inventory[6].Name));
-
-                        if (inv_index == "Empty_Slot")
-                        {
-                            Console.Clear();
-                            Beautifier.CoolWrite("red", "U dont have anything in that slot");
-                            player_state = true;
-                        }
-                        else if (inv_index != "Empty_Slot")
-                        {
-                            int index = inventory.FindIndex(item => item.Name == inv_index);
-                            PickFromInventory(inventory[index]);
-                            player_state = false;
-                        }
+                        Console.Clear();
+                        Beautifier.CoolWrite("red", "U dont have anything in that slot");
                     }
-                    inv_State = false;
+                    else if (inv_index != "Empty_Slot")
+                    {
+                        int index = inventory.FindIndex(item => item.Name == inv_index);
+                        PickFromInventory(inventory[index]);
+                    }
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -105,7 +97,7 @@ namespace GameJam.Character
             bool go = true;
             for (int i = 0; i < inventory.Count; i++)
             {
-                if(go)
+                if (go)
                 {
                     if (inventory[i].Name == "Empty_Slot" && !inventory.Contains(item))
                     {
@@ -129,18 +121,13 @@ namespace GameJam.Character
             }
         }
 
-            public static void PickFromInventory(Items item)
-            {
-                Sound.EatSound();
-                Player.Eat(item);
-                for (int i = 0; i < inventory.Count; i++) //This only works if you can only have one item per item type in your inventory
-                {
-                    if (inventory[i] == item)
-                        inventory.Insert(i, item);
-                }
-                inventory.Remove(item);
-                Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
-                inventory.Add(empty_slot);
-            }
+        public static void PickFromInventory(Items item)
+        {
+            Sound.EatSound();
+            Player.Eat(item);
+            inventory.Remove(item);
+            Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
+            inventory.Add(empty_slot);
         }
     }
+}
