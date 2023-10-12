@@ -42,7 +42,8 @@ namespace GameJam.Levels
             else if (playerChoice == "gåtilbage")
             {
                 Controls.Control();
-                //Nyt sted her skal kaldes
+                Console.Clear();
+                Boxen.Gåtilbage();
             }
         }
         public static void GoToCanteen()
