@@ -7,7 +7,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using GameJam.GameStart;
+using GameJam.Levels;
+
 
 namespace GameJam.Levels
 {
@@ -48,11 +49,12 @@ namespace GameJam.Levels
             }
             else if (playerChoice1 == "Gå ud og konfrontere Rengørings Damen")
             {
-                //Vagterne kommer ikke, og du kæmper kun mod Rengøringsdamen.
-                //Trigger Combat
+                //COMBAT
+                
                 Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
                     "\n");
                 // loot drop
+                
             }
 
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen");
@@ -86,8 +88,9 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
                 Console.ReadKey();
-                Beautifier.CoolWrite("","","","");
-                Consol
+                Beautifier.CoolWrite("blue",$"{Player.Name}","White","flere bajere");
+                Console.ReadKey();
+                Bar.Bartender();
             }
             else if (PlayerChoice2 == "udforsk området udenfor.")
             {

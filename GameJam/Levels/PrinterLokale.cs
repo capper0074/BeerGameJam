@@ -53,7 +53,25 @@ namespace GameJam.Levels
             else if (playerChoice == "Flæk ham (combat)")
             {
                 // Gå i combat mod jan
+                bool PlayerHasWon = true;
+
+                if (PlayerHasWon == true)
+                {
+                    Beautifier.CoolWrite("red", "Jan", "white", "NOOOOOOO, du besejrede miiiiigggg");
+
+                }
+                else
+                {
+                    Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS!!! TROEDE DU SERIØST, AT DU KUNNE VINDE OVER MIG??");
+                }
+
+
+
+
             }
+
+
+            
 
         }
     }

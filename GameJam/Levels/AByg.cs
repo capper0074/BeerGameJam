@@ -17,7 +17,7 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor a bygningen");
             Console.ReadKey();
 
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"Forvirret kigger {Player.Name} sig omkring. tom plads. klar himmel men hvor der normalt var skyer nu varsæbebobbel");
+            Beautifier.CoolWrite("green", "Narrator: ", "white", $"Forvirret kigger {Player.Name} sig omkring. ");
                 
             //"Hvor der normalt var spækket med rygere, dejlige damer.. og mænd selvfølgelig," +
             //"var der nu mere tommere for mennesker end " +
