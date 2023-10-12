@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GameJam.Character;
 using GameJam.GameStart;
+using GameJam.Graphic;
 
 namespace GameJam.Levels
 {

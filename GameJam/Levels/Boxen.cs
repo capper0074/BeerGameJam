@@ -52,6 +52,7 @@ namespace GameJam.Levels
                 //Trigger Combat
                 Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
                     "\n");
+                // sejrs lyd
                 // loot drop
             }
 
