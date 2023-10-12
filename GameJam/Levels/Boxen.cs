@@ -31,8 +31,6 @@ namespace GameJam.Levels
 
         public static void GoToBoxen()
         {
-            HasBeen = true;
-
             if (HasBeen)
             {
                 DefaultMenu();
@@ -41,16 +39,9 @@ namespace GameJam.Levels
             {
                 Beautifier.CoolWrite("yellow", "Velkommen til Boxen, intro intro du har ikke været her før");
 
-                string playerChoice = Beautifier.CoolMenu("Hvad vil du nu", "gå over til Baren", "gå udenfor");
-                if (playerChoice == "gå over til Baren")
-                {
-                    Bar();
-                }
-                else if (playerChoice == "gå udenfor")
-                {
-                    Outside.GoOutside();
-                }
+                DefaultMenu();
             }
+            HasBeen = true;
         }
         public static void WakeUp()
         {
