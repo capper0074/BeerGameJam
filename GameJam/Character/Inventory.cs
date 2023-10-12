@@ -55,17 +55,77 @@ namespace GameJam.Character
 
         public static void DisplayInventory()
         {
-            throw new NotImplementedException(); //TODO: Implement to display inventory
+            Console.WriteLine("This is your inventory");
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                Console.WriteLine(inventory[i].Name + " || " + inventory[i].HealthStat + " || " + inventory[i].StaminaStat + " || " + inventory[i].DrunkStat);
+            }
+
+            bool inv_State = true;
+
+            while (inv_State == true)
+            {
+                //Made a new menu system, so we can iteract with it.
+                var player_Answer = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                    .Title("Do you want to use anything from your inventroy\n ---------------------------")
+                    .PageSize(3)
+                    .AddChoices("yes", "no"));
+
+                if (player_Answer == "yes")
+                {
+                    bool player_state = true;
+
+                    while (player_state == true)
+                    {
+                        var inv_index = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                            .Title("Choose what u want from your inventory \n ---------------------------")
+                            .PageSize(7)
+                            .AddChoices(inventory[0].Name, inventory[1].Name, inventory[2].Name, inventory[3].Name, inventory[4].Name, inventory[5].Name, inventory[6].Name));
+
+                        if (inv_index == "Empty_Slot")
+                        {
+                            Console.Clear();
+                            Beautifier.CoolWrite("red", "U dont have anything in that slot"); //this can add color to your text
+                            player_state = true;
+                        }
+                        else if (inv_index != "Empty_Slot")
+                        {
+                            int index = inventory.FindIndex(item => item.Name == inv_index);
+                            PickFromInventory(inventory[index]);
+                            player_state = false;
+                        }
+
+
+                    }
+                    inv_State = false;
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else if (player_Answer == "no")
+                {
+                    inv_State = false;
+                    Console.Clear();
+                }
+            }
         }
 
         public static void AddToInventory(Items item)
         {
-            throw new NotImplementedException(); //TODO: Implement this to add an item to inventory
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if (inventory[i].Name == "Empty_Slot")
+                {
+                    inventory.Add(item);
+                }
+            }
         }
 
         public static void PickFromInventory(Items item)
         {
-            throw new NotImplementedException(); //TODO: Implement this to pick an item from inventory
+            Player.Eat(item);
+            inventory.Remove(item);
+            Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
+            inventory.Add(empty_slot);
         }
     }
 }

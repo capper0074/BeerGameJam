@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GameJam.Graphic;
 using GameJam.GameStart;
 using GameJam.Character;
+using Spectre.Console;
 
 namespace GameJam.Levels
 {
@@ -14,6 +15,8 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
+            Sound.Test();
+
             AsciiArt.Ascii_Intro();
             Beautifier.CoolWrite("green", "Narrator","white", $"{Player.Name} er til fredagsbar i BeerBoxen. \n " +
                 "Svælget bliver smurt med tonsvis af Odense Classic. Han taber lidt for mange omgange beerpong.\n " +
@@ -21,7 +24,7 @@ namespace GameJam.Levels
                 "Det sidste han ser, er sig selv i spejlet inden " +
                 "han falder omkuld med sin bajer i hånden.");
             Controls.Control(); // husk at kalde Controls.Control hver gang vi skifter rum
-            WakingUp.WakeUp();
+            Boxen.WakeUp();
             
              
 

@@ -25,7 +25,7 @@ namespace GameJam.GameStart
                     playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
                         .Title("What do u want to do?")
                         .PageSize(7)
-                        .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Exit the game", "Take a piss"));
+                        .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Take a piss", "Exit the game"));
                 }
                 else
                 {
