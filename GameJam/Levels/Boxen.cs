@@ -2,13 +2,14 @@
 using GameJam.GameStart;
 using GameJam.Graphic;
 using System;
+using GameJam.Fighting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using GameJam.Levels;
-
+using GameJam.Stuff;
 
 namespace GameJam.Levels
 {
@@ -63,12 +64,19 @@ namespace GameJam.Levels
             }
             else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
-                //COMBAT
-                
-                Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
-                    "\n");
-                // loot drop
-                
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
+                {
+                    Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
+                                        "\n");
+                }
+                else if (combatState == false)
+                {
+                    Console.Clear();
+                    GameLost.GameIsLost();
+                }
+
             }
 
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen, b***h");
