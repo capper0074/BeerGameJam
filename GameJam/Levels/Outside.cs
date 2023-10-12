@@ -18,43 +18,63 @@ namespace GameJam.Levels
     public static class Outside
     {
         public static bool HasBeen { get; set; }
-
-        //Implement a default menu with two choices
         public static void DefaultMenu()
         {
+
+            string playerChoice = Beautifier.CoolMenu("Du er nu tilbage udenfor", "Gå ind i bygning A", "Gå ind i bygning B", "Gå ind i Boxen");
+            {
+                if (playerChoice == "Gå ind i bygning A")
+                {
+                    AByg.GoIntoAbyg();
+                }
+                else if (playerChoice == "Gå ind bygning B")
+                {
+                    BByg.GoIntoB();
+                }
+                else if (playerChoice == "Gå ind i Boxen")
+                {
+                    Boxen.GoToBoxen();
+                }
+            }
 
         }
 
         public static void GoOutside()
         {
-            //Check for HasBeen
-            //If HasBeen is true then give them a defualt menu with a way to AByg and a way to Bbyg
-            //If Hasbeen is false then give them a nice welcome message and the defaultmenu, for now...
-
+            if (HasBeen)
+            {
+                DefaultMenu();
+            }
+            else if (!HasBeen)
+            {
+                Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Du er nu kommet udenfor for første gang. Du har valgmulighederne at gå i bygning A, Bygning B, boxen. ");
+                DefaultMenu();
+            }
+            
             //Decide if this Narration can be reused
             #region[Narration]
-            Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Er nu kommet udenfor.");
-            Console.ReadKey();
-            Beautifier.CoolWrite("white", $"Der var intet som så ud som det plejede...");
-            Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
-            Console.ReadKey();
-            Beautifier.CoolWrite("", $" Der er flere forskellige muligheder her.");
+            //    Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Er nu kommet udenfor.");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("white", $"Der var intet som så ud som det plejede...");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("", $" Der er flere forskellige muligheder her.");
             Console.ReadKey();
             #endregion
             #region[Narration]
-            Console.Clear();
-            Beautifier.CoolWrite("Green", "Narrator", "White", $"Prøv bare at se {Player.Name} what a G Det fortjener en bajer");
-            Controls.Control();
-            AByg.GoIntoAbyg();
+            //Console.Clear();
+            //Beautifier.CoolWrite("Green", "Narrator", "White", $"Prøv bare at se {Player.Name} what a G Det fortjener en bajer");
+            //Controls.Control();
+            //AByg.GoIntoAbyg();
             #endregion
             #region[Narration]
-            Console.Clear();
-            Beautifier.CoolWrite("Green", "Narrator", "White", $"Oooooh spooky, {Player.Name} tænker vi skal få noget liquid courage indenbords før vi fortsætter ");
-            Controls.Control();
-            Forest.Dystreskov();
+            //Console.Clear();
+            //Beautifier.CoolWrite("Green", "Narrator", "White", $"Oooooh spooky, {Player.Name} tænker vi skal få noget liquid courage indenbords før vi fortsætter ");
+            //Controls.Control();
+            //Forest.Dystreskov();
             #endregion
-        }
+        } 
     }
 }
-}
+
