@@ -17,7 +17,9 @@ namespace GameJam.Levels
 {
     public static class Outside
     {
-        public static void WeOutside()
+        public static bool HasBeen { get; set; }
+
+        public static void GoOutside()
         {
 
             #region[Narration]

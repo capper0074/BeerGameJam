@@ -13,8 +13,9 @@ using GameJam.Character;
 
 namespace GameJam.Levels
 {
-    internal class Forest
+    public static class Forest
     {
+        public static bool HasBeen { get; set; }
         public static void Dystreskov() 
         {
             #region[Narration]

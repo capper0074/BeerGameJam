@@ -13,8 +13,6 @@ namespace GameJam.Levels
     {
         public static bool HasBeen { get; set; }
 
-        public static bool HasKeycard { get; set; }
-
         public static void DefaultMenu()
         {
             if (HasBeen)

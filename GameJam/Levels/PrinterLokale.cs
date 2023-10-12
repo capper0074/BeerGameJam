@@ -11,6 +11,7 @@ namespace GameJam.Levels
 {
     public static class PrinterLokale
     {
+        public static bool HasBeen { get; set; }
         public static void TalkToJan()
         {
             #region[Narration]

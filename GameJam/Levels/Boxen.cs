@@ -18,7 +18,17 @@ namespace GameJam.Levels
 
         public static void DefaultMenu()
         {
-            Beautifier.CoolCenterLine("Dette område mangler at blive implementeret", "red");
+            HasBeen = true;
+
+            var playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "gå over til Baren", "gå udenfor");
+            if(playerChoice == "gå over til Baren")
+            {
+                GoToBar();
+            }
+            else if(playerChoice == "gå udenfor")
+            {
+                Outside.GoOutside();
+            }
         }
         public static void WakeUp()
         {
@@ -115,7 +125,7 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
                 Console.ReadKey();
-                Beautifier.CoolWrite("blue",$"{Player.Name}","White","flere bajere");
+                Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "flere bajere");
                 Console.ReadKey();
                 Bar.Bartender();
                 #endregion
@@ -127,9 +137,20 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "You know it.");
                 Console.ReadKey();
-                Outside.WeOutside();
+                Outside.GoOutside();
                 #endregion
             }
+        }
+        //<-----------BAREN------------>
+
+        public static void GoToBar()
+        {
+            if (HasBeen) {  }
+            else if (!HasBeen) { VendorIntro(); }
+        }
+        public static void VendorIntro()
+        {
+
         }
     }
 }
