@@ -31,7 +31,6 @@ namespace GameJam.Levels
 
         public static void GoToBbyg()
         {
-
             if (HasBeen == true)
             {
                 DefaultMenu();
@@ -48,12 +47,8 @@ namespace GameJam.Levels
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", Player.Name, "white", "Hvem ved hvad der kan gemme sig derinde?");
                 Console.ReadKey();
-
                 Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
-
-
                 #endregion
-
             }
             HasBeen = true;
         }
