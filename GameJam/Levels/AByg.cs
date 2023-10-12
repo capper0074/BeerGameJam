@@ -26,7 +26,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("blue", Player.Name, "white", "Hvad er det der foregår?");
             Console.ReadKey();
-            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvor er alle rygerne og de dejlige damer.");
+            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvor er alle rygerne og de dejlige damer... og mænd");
             Console.ReadKey();
             Beautifier.CoolWrite("blue", Player.Name, "white", "UCL er fanme tommere end min konto 2. dag i måneden.");
             Console.ReadKey();
@@ -47,7 +47,7 @@ namespace GameJam.Levels
         }
         public static void GoToCanteen()
         {
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} vælger at gå ind i a bygningen og fortsætte til kantinen");
+            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} vælger at gå ind i A-bygningen og fortsætte til kantinen");
 
 
             Beautifier.CoolWrite("white", "");

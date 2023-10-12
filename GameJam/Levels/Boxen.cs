@@ -29,16 +29,29 @@ namespace GameJam.Levels
             Console.Clear();
 
             Beautifier.CoolWrite("Green", "Narrator", "White", $"{Player.Name} er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
+            Console.ReadKey();
             Beautifier.CoolWrite("Green", "Narrator", "White", "Han vågnede nu op lørdag morgen i Beerboxen, og kan hører nogen udenfor toiletdøren." + "\n");
-
+            Console.ReadKey();
             Beautifier.CoolWrite("Yellow", "*Bank Bank Bank*" + "\n");
 
             Console.ReadKey();
-            Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "Hvem er det der bruger mit toilet! ");
+            Beautifier.CoolWrite("Red", "Fremmed", "White", "\"HALLO!\" ");
             Console.ReadKey();
-            Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "Jeg kalder på vagterne!" + "\n");
+            Beautifier.CoolWrite("Red", "Fremmed", "White", "Kom ud fra toilettet! Det er rengøringsdag! Giv mig din pant! ");
             Console.ReadKey();
-            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger ? er du en pussy? eller går du ud og tager konflikten");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvem er det? ");
+
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "...");
+            Console.ReadKey();
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "...");
+            Console.ReadKey();
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "ReNgøRiNgS DaMeeeN!!");
+            Console.ReadKey();
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "\"Skrub AAFF! Umuligt du får min ØLLL!!\"");
+            Console.ReadKey();
+            Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "\"Pant!, eller jeg kalder på vagterne!\"" + "\n");
+            Console.ReadKey();
+            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
             {
@@ -57,7 +70,7 @@ namespace GameJam.Levels
                 
             }
 
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen, b***h");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Jeg ku' godt bruge en drink efter det der");
             Console.ReadKey();
