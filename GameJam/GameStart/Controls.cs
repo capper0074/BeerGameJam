@@ -13,6 +13,7 @@ namespace GameJam.GameStart
     {
         public static void Control() //Should popup when the player needs to do something
         {
+            
             Console.Clear();
             AsciiArt.Ascii_Stats();
 
@@ -22,7 +23,8 @@ namespace GameJam.GameStart
 
             while (state == true)
             {
-                
+                Sound.Waiting_Sound();
+
                 if (Player.Piss >= 20)
                 {
                     Beautifier.CoolLine();
@@ -52,6 +54,7 @@ namespace GameJam.GameStart
                     Console.Clear();
                     Run.Game_Tick();
                     state = false;
+                    Sound.StopSound();
 
                 }
                 else if (playerChoice == "See your inventory") //Inventory
@@ -70,6 +73,7 @@ namespace GameJam.GameStart
                 }
                 else if (playerChoice == "Exit the game") //Exit
                 {
+                    Sound.StopSound();
                     state = false;
                     Console.Clear();
                     Environment.Exit(0);

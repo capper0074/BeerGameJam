@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GameJam.Character;
+using GameJam.Graphic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +19,15 @@ namespace GameJam.Levels
     {
         public static void Weoutside()
         {
-            Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "  Er nu kommet udenfor, Der er flere forskellige muligheder her.");
+            Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Er nu kommet udenfor.");
             Console.ReadKey();
- 
+            Beautifier.CoolWrite("white", $"Der var intet som så ud som det plejede...");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
+            Console.ReadKey();
+            Beautifier.CoolWrite("", $" Der er flere forskellige muligheder her.");
+            Console.ReadKey();
+
             string playerChoice = Beautifier.CoolMenu("", "Gå mod A-bygning", "Gå mod den dystre skov");
             if (playerChoice == "Gå mod A-bygning")
             {
