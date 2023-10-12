@@ -48,8 +48,9 @@ namespace GameJam.Fighting
                     combatState = false;
                 }
 
-                return false;
+                
             }
+            return false;
 
 
 
