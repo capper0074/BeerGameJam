@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameJam.Fighting
+namespace GameJam.Levels
 {
-    public class Combat
+    internal class AByg
     {
-
     }
 }
