@@ -1,4 +1,5 @@
 ﻿using GameJam.Character;
+using GameJam.Graphic;
 using Spectre.Console;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,27 @@ namespace GameJam.GameStart
         {
             bool state = true;
 
+            string playerChoice = "";
+
             while (state == true)
             {
+                if (Player.Piss >= 20)
+                {
+                    Beautifier.CoolLine();
+                    playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                        .Title("What do u want to do?")
+                        .PageSize(7)
+                        .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Take a piss", "Exit the game"));
+                }
+                else
+                {
+                    Beautifier.CoolLine();
+                    playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                        .Title("What do u want to do?")
+                        .PageSize(6)
+                        .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Exit the game"));
+                }
 
-                //Made a new menu system, so we can iteract with it.
-                var playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
-                    .Title("What do u want to do?\n ---------------------------")
-                    .PageSize(6)
-                    .AddChoices("See your stats", "Continue", "See your inventory", "See your weapon", "Exit the game"));
 
 
                 if (playerChoice == "See your stats") //See stats
@@ -44,6 +58,11 @@ namespace GameJam.GameStart
                 else if (playerChoice == "See your weapon")
                 {
                     throw new NotImplementedException();
+                }
+                else if (playerChoice == "Take a piss")
+                {
+                    Console.WriteLine("You just took a huge piss");
+                    Player.TakeAPiss();
                 }
                 else if (playerChoice == "Exit the game") //Exit
                 {

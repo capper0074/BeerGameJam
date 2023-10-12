@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace GameJam.Levels
 {
-    internal static class WakingUp
+    internal static class Boxen
     {
         public static void WakeUp()
 
         {
-            Beautifier.CoolWrite("Blue", Player.name, "White", "Hvor Fuck er jeg?");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvor Fuck er jeg?");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.name, "White", "Og Fuck hvor er jeg tørstig.");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Og Fuck hvor er jeg tørstig.");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.name, "White", "Hvad er det der lugter sådan?");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvad er det der lugter sådan?");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.name, "White", "*Sniff Sounds*");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sounds*");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for at slukke tørsten Odense Classic");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for at slukke tørsten Odense Classic");
             Console.ReadKey();
             Console.Clear();
 
-            Beautifier.CoolWrite("Green", "Narrator", "White", Player.name + "Er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
+            Beautifier.CoolWrite("Green", "Narrator", "White", Player.Name + "Er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
             Beautifier.CoolWrite("Green", "Narrator", "White", "Han vågnede nu op lørdag morgen i Beerboxen, og kan hører nogen udenfor toiletdøren." + "\n");
 
             Beautifier.CoolWrite("Yellow", "*Bank Bank Bank*" + "\n");

@@ -15,16 +15,17 @@ namespace GameJam.GameStart
         public static void Game_Tick() //For things witch need to tick when the game runs
         {
             Player.Tick_Stamina();
+            Player.Tick_Piss();
         }
 
         public static void StartGame()
         {
-            //GameItems.Initialize();
-            //LootTable.Initialize();
+            GameItems.Initialize();
+            LootTable.Initialize();
 
             Player.Initialize();
-            //Enemy.Initialize();
-            //Inventory.Initialize();
+            Enemy.Initialize();
+            Inventory.Initialize();
 
             StartMenu.Menu();
         }
