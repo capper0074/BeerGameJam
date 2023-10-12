@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameJam.Levels
 {
-    internal class AByg
+    public class AByg
     {
+
     }
 }
