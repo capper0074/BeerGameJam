@@ -8,13 +8,15 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using GameJam.Levels;
-
+using Spectre.Console;
 
 namespace GameJam.Levels
 {
     internal static class Boxen
     {
         public static bool HasBeen { get; set; }
+
+        public static bool HasBeenBar { get; set; }
         private static void DefaultMenu()
         {
             string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "Gå over til Baren", "Gå udenfor");
@@ -139,17 +141,23 @@ namespace GameJam.Levels
 
         public static void Bar()
         {
-            if (HasBeen) { BarMenu(); }
-            else if (!HasBeen) 
+            if (HasBeenBar) { BarMenu(); }
+            else if (!HasBeenBar) 
             { 
-                Beautifier.CoolCenterLine("yellow","Baren er det bedste sted på jorden, kom hid kom hid sluk din tørst");
+                Beautifier.CoolCenterLine("Baren er det bedste sted på jorden, kom hid kom hid sluk din tørst", "yellow");
+                Beautifier.CoolLine();
+                Console.ReadKey();
+                Console.Clear();
+
+                HasBeenBar = true;
+
                 BarMenu();
             }
         }
         
         public static void BarMenu()
         {
-            Inventory.DisplayInventory();
+            //Dispaly bar inventory
             Beautifier.CoolWrite("blue", "Du bevæger dig tilbage til Boxen");
             DefaultMenu();
         }
