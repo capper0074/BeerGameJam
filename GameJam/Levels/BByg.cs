@@ -32,6 +32,10 @@ namespace GameJam.Levels
         public static void GoToBbyg()
         {
             HasBeen = true;
+            
+            //Check if you have been here
+
+            //If you have been here give them default menu
 
             #region[Narration]
             Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor b bygningen");
@@ -45,18 +49,8 @@ namespace GameJam.Levels
             Console.ReadKey();
 
             Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
-            #endregion
-            string playerChoice = Beautifier.CoolMenu("", "gå ind i bygningen", "gå tilbage");
-            if (playerChoice == "gå ind i bygningen")
-            {
-                Controls.Control();
-                GoIntoB();
-            }
-            else if (playerChoice == "gåtilbage")
-            {
-                Controls.Control();
-                //Nyt sted her skal kaldes
-            }
+            #endregion //
+            //Narration if you have not been here before
         }
         public static void GoIntoB()
         {

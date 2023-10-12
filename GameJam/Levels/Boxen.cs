@@ -18,20 +18,44 @@ namespace GameJam.Levels
 
         public static void DefaultMenu()
         {
-            HasBeen = true;
-
-            var playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "gå over til Baren", "gå udenfor");
-            if(playerChoice == "gå over til Baren")
+            string playerChoice = Beautifier.CoolMenu("Velkommen til Boxen", "gå over til Baren", "gå udenfor");
+            if (playerChoice == "gå over til Baren")
             {
-                GoToBar();
+                Bar();
             }
-            else if(playerChoice == "gå udenfor")
+            else if (playerChoice == "gå udenfor")
             {
                 Outside.GoOutside();
             }
         }
+
+        public static void GoToBoxen()
+        {
+            HasBeen = true;
+
+            if (HasBeen)
+            {
+                DefaultMenu();
+            }
+            else if (!HasBeen)
+            {
+                Beautifier.CoolWrite("yellow", "Velkommen til Boxen, intro intro du har ikke været her før");
+
+                string playerChoice = Beautifier.CoolMenu("Hvad vil du nu", "gå over til Baren", "gå udenfor");
+                if (playerChoice == "gå over til Baren")
+                {
+                    Bar();
+                }
+                else if (playerChoice == "gå udenfor")
+                {
+                    Outside.GoOutside();
+                }
+            }
+        }
         public static void WakeUp()
         {
+            HasBeen = true;
+
             #region[Narration]
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvor er jeg?");
             Console.ReadKey();
@@ -143,7 +167,7 @@ namespace GameJam.Levels
         }
         //<-----------BAREN------------>
 
-        public static void GoToBar()
+        public static void Bar()
         {
             if (HasBeen) {  }
             else if (!HasBeen) { VendorIntro(); }
