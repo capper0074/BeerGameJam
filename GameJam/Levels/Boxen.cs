@@ -88,6 +88,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "\"Pant!, eller jeg kalder på vagterne!\"" + "\n");
             Console.ReadKey();
+            Console.Clear();
             #endregion
             Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valgmuligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             
@@ -124,6 +125,7 @@ namespace GameJam.Levels
             }
 
             #region[Narration]
+            Console.Clear();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Jeg ku' godt bruge en drink efter det der");
