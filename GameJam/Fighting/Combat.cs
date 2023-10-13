@@ -145,14 +145,18 @@ namespace GameJam.Fighting
                     Sound.StopSound();
                     Sound.LoseSound();
                     return false; //u lost
-                    Console.Clear();
-                    AsciiArt.Ascii_Lose();
-                    Console.ReadKey(); //Wait for input so player can see the beautiful art
-                    StartMenu.Menu();
                 }
 
             }
-            Sound.StopSound();
+            if(!combatState)
+            {
+                Console.Clear();
+                AsciiArt.Ascii_Lose();
+                Console.ReadKey(); //Wait for input so player can see the beautiful art
+                Sound.StopSound();
+
+                StartMenu.Menu();
+            }
             return false;
 
 
