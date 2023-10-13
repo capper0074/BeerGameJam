@@ -39,14 +39,14 @@ namespace GameJam.Fighting
                             if(playerChoice == "Ja")
                             {
                                 enemy.Enemy_Health -= 95;
-                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                             }
                             else if(playerChoice == "Nej")
                             {
                                 Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                 Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
                                 enemy.Enemy_Health -= WeaponSlot.DisplayStat();
-                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                             }
                         }
                         else
@@ -61,7 +61,7 @@ namespace GameJam.Fighting
                                     Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                     Console.WriteLine($"You are too drunk to hit {enemy.Name} so u miss him");
                                     enemy.Enemy_Health -= 0; //Is this necessary?
-                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                                     Console.ReadKey();
                                 }
                                 else
@@ -69,7 +69,7 @@ namespace GameJam.Fighting
                                     Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                     Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
                                     enemy.Enemy_Health -= WeaponSlot.DisplayStat();
-                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                                     Console.ReadKey();
                                 }
                             }
@@ -83,7 +83,7 @@ namespace GameJam.Fighting
                                     Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                     Console.WriteLine($"You are too drunk to hit {enemy.Name} so u miss him");
                                     enemy.Enemy_Health -= 0;
-                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                                     Console.ReadKey();
                                 }
                                 else
@@ -91,7 +91,7 @@ namespace GameJam.Fighting
                                     Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                     Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
                                     enemy.Enemy_Health -= WeaponSlot.DisplayStat();
-                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                                     Console.ReadKey();
                                 }
                             }
@@ -101,7 +101,7 @@ namespace GameJam.Fighting
                                 Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
                                 Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
                                 enemy.Enemy_Health -= WeaponSlot.DisplayStat();
-                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health", "red");
                                 Console.ReadKey();
                             }
                         }
@@ -110,7 +110,7 @@ namespace GameJam.Fighting
                             Console.WriteLine($"Now {enemy.Name} attacks u");
                             Console.WriteLine($"They deal a total of {enemy.Attack_Value} damage");
                             Player.Health -= enemy.Attack_Value;
-                            Beautifier.CoolBarCombat(Player.Health, "Player health");
+                            Beautifier.CoolBarCombat(Player.Health, "Player health", "green");
                             Console.ReadKey();
 
                             Console.WriteLine("This was round: " + combatRounds);

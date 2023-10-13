@@ -46,11 +46,11 @@ namespace GameJam.Graphic
                 .AddItem("Piss", piss, Color.Yellow));
         }
 
-        public static void CoolBarCombat(int health, string name)
+        public static void CoolBarCombat(int health, string name, string color)
         {
             AnsiConsole.Write(new BarChart()
                 .Width(60)
-                .Label($"[green bold underline]{name}[/]")
+                .Label($"[{color} bold underline]{name}[/]")
                 .CenterLabel()
                 .AddItem("Health", health, Color.Red));
         }

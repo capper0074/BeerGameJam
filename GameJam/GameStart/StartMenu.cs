@@ -42,6 +42,8 @@ namespace GameJam.GameStart
                         if (Player.Name == "")
                         {
                             Console.WriteLine("Er du dum? Skriv dit navn!");
+                            Console.ReadKey();
+                            Console.Clear();
                             loopStage = true;
                         }
                         else
@@ -60,7 +62,6 @@ namespace GameJam.GameStart
                     Console.Clear();
                     Environment.Exit(0);
                     //SendKeys.SendWait("{ENTER}");
-
                 }
             }
         }
