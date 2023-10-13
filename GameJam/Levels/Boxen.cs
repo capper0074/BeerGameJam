@@ -102,9 +102,8 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("green", "Narrator", "White", $"Det virker til at hun løj omkring vagterne, hun går videre og {Player.Name} er nu en tøsedreng");
                 #endregion
             }
-            else if (playerChoice1 == "Gå ud og konfronter rengørings damen")
+            else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
-                Controls.Control();
 
                 bool combatState = Combat.StartCombat();
 
