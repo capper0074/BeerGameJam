@@ -4,6 +4,7 @@ using GameJam.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,15 +26,28 @@ namespace GameJam.GameStart
                 //Made a new menu system, so we can iteract with it.
                 var playerChoice = Beautifier.CoolMenu("Welcome to the beer game", "Start the game", "Exit the game");
 
+                bool loopStage = true; 
 
                 if (playerChoice == "Start the game")
                 {
                     Console.Clear();
                     Info.GameInfo();
 
-                    Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
-                    Player.Name = Console.ReadLine();
-                     
+                    while (loopStage == true)
+                    {
+                        Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
+                        Player.Name = Console.ReadLine();
+                        if (Player.Name == "")
+                        {
+                            Console.WriteLine("Er du dum? Skriv dit navn!");
+                            loopStage = true;
+                        }
+                        else
+                        {
+                            loopStage = false;
+                        }
+                    }
+
                     Console.Clear();
                     state = false;
                     Intro.StartIntro();
