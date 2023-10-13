@@ -102,7 +102,6 @@ namespace GameJam.Levels
             }
             else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
-                Controls.Control();
 
                 bool combatState = Combat.StartCombat();
 

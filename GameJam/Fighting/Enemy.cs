@@ -31,10 +31,18 @@ namespace GameJam.Fighting
 
                 Creatures leif = new Creatures("Leif", 5, 100);
 
+                Creatures rengøringsDame = new Creatures("Rengørings Dame", 5, 100);
+
                 enemies.Add(leif);
                 enemies.Add(jan);
+                enemies.Add(rengøringsDame);
             }
 
+        }
+
+        public static Creatures Rengøring()
+        {
+            return enemies[2];
         }
 
         public static Creatures Enemy_Pick()

@@ -23,6 +23,7 @@ namespace GameJam.Fighting
 
             Creatures enemy = Enemy.Enemy_Pick();
 
+
             while(combatState == true)
             {
                 if (Player.Health > 0)
