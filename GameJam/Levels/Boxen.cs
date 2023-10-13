@@ -89,7 +89,7 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "\"Pant!, eller jeg kalder på vagterne!\"" + "\n");
             Console.ReadKey();
             #endregion
-            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
+            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valgmuligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
@@ -100,7 +100,7 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("green", "Narrator", "White", $"Det virker til at hun løj omkring vagterne, hun går videre og {Player.Name} er nu en tøsedreng");
                 #endregion
             }
-            else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
+            else if (playerChoice1 == "Gå ud og konfronter rengørings damen")
             {
                 Controls.Control();
 
