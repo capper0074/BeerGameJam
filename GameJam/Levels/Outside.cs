@@ -16,90 +16,67 @@ namespace GameJam.Levels
 {
     public static class Outside
     {
-        public static string playerChoice;
-        public static void WeOutside()
+        public static bool HasBeen { get; set; }
+        public static void DefaultMenu()
         {
-            Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Er nu kommet udenfor.");
-            Console.ReadKey();
-            Beautifier.CoolWrite("white", $"Der var intet som så ud som det plejede...");
-            Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
-            Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator","White", $" Der er flere forskellige muligheder her.");
-            Console.ReadKey();
 
-            playerChoice = Beautifier.CoolMenu("", "Gå mod A-bygning", "Gå mod den dystre skov");
-            if (playerChoice == "Gå mod A-bygning")
+            string playerChoice = Beautifier.CoolMenu("Du er nu tilbage udenfor", "Gå ind i bygning A", "Gå ind i bygning B", "Gå ind i Boxen");
             {
-                Console.Clear();
-                Beautifier.CoolWrite("Green", "Narrator", "White", $"Prøv bare at se {Player.Name} what a G Det fortjener en bajer");
-                Controls.Control();
-                Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor a bygningen");
-                Console.ReadKey();
-
-                Beautifier.CoolWrite("green", "Narrator: ", "white", $"Forvirret kigger {Player.Name} sig omkring. ");
-
-                //"Hvor der normalt var spækket med rygere, dejlige damer.. og mænd selvfølgelig," +
-                //"var der nu mere tommere for mennesker end " +
-                //$"{Player.Name}'s konto efter 2. dag i måneden.);
-
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", Player.Name, "white", "Hvad er det der foregår?");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", Player.Name, "white", "Hvor er alle rygerne og de dejlige damer... og mænd");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", Player.Name, "white", "UCL er fanme tommere end min konto 2. dag i måneden.");
-                Console.ReadKey();
-                Beautifier.CoolWrite("blue", Player.Name, "white", "Jeg har ikke være så forvirret siden jeg tog svampe i sidste weekend.");
-                Console.ReadKey();
-
-                playerChoice = Beautifier.CoolMenu("", "gå ind i bygningen", "gå tilbage");
-                if (playerChoice == "gå ind i bygningen")
+                if (playerChoice == "Gå ind i bygning A")
                 {
                     Controls.Control();
-                    AByg.GoToCanteen();
+                    AByg.GoIntoAbyg();
                 }
-                else if (playerChoice == "gåtilbage")
+                else if (playerChoice == "Gå ind bygning B")
                 {
                     Controls.Control();
-                    //Nyt sted her skal kaldes
+                    BByg.GoIntoB();
                 }
-            }
-            else if (playerChoice == "Gå mod den dystre skov")
-            {
-                Console.Clear();
-                Beautifier.CoolWrite("Green", "Narrator", "White", $"Oooooh spooky, {Player.Name} tænker vi skal få noget liquid courage indenbords før vi fortsætter ");
-                Controls.Control();
-                Forest.Dystreskov();
-
+                else if (playerChoice == "Gå ind i Boxen")
+                {
+                    Boxen.GoIntoBoxen();
+                }
             }
 
         }
-        public static void GoUpToB()
+
+        public static void GoOutside()
         {
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} befinder sig udenfor B-bygningen");
-            Console.ReadKey();
-
-            Beautifier.CoolWrite("green", "Narrator: ", "white", $"{Player.Name} tænker over om det er en god ide at gå ind i b bygningen eller ej? ");
-
-            Beautifier.CoolWrite("blue", Player.Name, "white", "B bygningen er lige der, men er det nu også en god ide at gå derind?");
-            Console.ReadKey();
-            Beautifier.CoolWrite("blue", Player.Name, "white", "Hvem ved hvad der kan gemme sig derinde?");
-            Console.ReadKey();
-
-            Beautifier.CoolWrite("green", "Narrator; ", "white", $"Så hvad vil du gøre {Player.Name}?");
-
-            string playerChoice = Beautifier.CoolMenu("", "gå ind i bygningen", "gå tilbage");
-            if (playerChoice == "gå ind i bygningen")
+            if (HasBeen)
             {
-                Controls.Control();
-                BByg.GoIntoB();
+                DefaultMenu();
             }
-            else if (playerChoice == "gå tilbage")
+            else if (!HasBeen)
             {
-                Controls.Control();
-                //Nyt sted her skal kaldes
+                Console.Clear();
+                Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Du er nu kommet udenfor for første gang. Du har valgmulighederne at gå i bygning A, Bygning B, boxen. ");
+                DefaultMenu();
             }
-        }
+            
+            //Decide if this Narration can be reused
+            #region[Narration]
+            //    Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Er nu kommet udenfor.");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("white", $"Der var intet som så ud som det plejede...");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
+            //Console.ReadKey();
+            //Beautifier.CoolWrite("", $" Der er flere forskellige muligheder her.");
+            Console.ReadKey();
+            #endregion
+            #region[Narration]
+            //Console.Clear();
+            //Beautifier.CoolWrite("Green", "Narrator", "White", $"Prøv bare at se {Player.Name} what a G Det fortjener en bajer");
+            //Controls.Control();
+            //AByg.GoIntoAbyg();
+            #endregion
+            #region[Narration]
+            //Console.Clear();
+            //Beautifier.CoolWrite("Green", "Narrator", "White", $"Oooooh spooky, {Player.Name} tænker vi skal få noget liquid courage indenbords før vi fortsætter ");
+            //Controls.Control();
+            //Forest.Dystreskov();
+            #endregion
+        } 
     }
 }
+

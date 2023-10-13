@@ -4,6 +4,7 @@ using GameJam.Levels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -27,7 +28,7 @@ namespace GameJam.GameStart
                 //Made a new menu system, so we can iteract with it.
                 string playerChoice = Beautifier.CoolMenu("Welcome to the beer game", "Start the game", "Exit the game");
 
-                bool loopStage = true;
+                bool loopStage = true; 
 
                 if (playerChoice == "Start the game")
                 {
@@ -48,6 +49,7 @@ namespace GameJam.GameStart
                             loopStage = false;
                         }
                     }
+
                     Console.Clear();
                     state = false;
                     Intro.StartIntro();
