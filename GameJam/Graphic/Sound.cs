@@ -58,7 +58,7 @@ namespace GameJam.Graphic
         }
         public static void Drinking_Sound()
         {
-            player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\Minecraft Drinking Sound Effect.mp3";
+            player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\onlymp3_mp3cut.net_1.mp3";
             player.controls.play();
         }
 
