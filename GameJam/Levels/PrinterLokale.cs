@@ -68,6 +68,7 @@ namespace GameJam.Levels
                 //PUT HELTEN I COMBAT MOD JAN
                 #region[Narration]
                 Beautifier.CoolWrite("red", "Jan: ", "white", "NEEEEEEEJ DU BESEJREDE MIIIG");
+                Console.ReadKey();
                 Beautifier.CoolWrite("green", "Narrator: ", "white", "Uden sin øl, tog Jan hjem for lave flere af sine online tutorials");
                 #endregion
 
