@@ -51,7 +51,7 @@ namespace GameJam.Levels
             else if (!HasBeen)
             {
                 Console.Clear();
-                Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Du er nu kommet udenfor for første gang. Du har valgmulighederne at gå i bygning A, Bygning B, boxen. ");
+                Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "står nu udenfor. Du har valgmulighederne at gå i bygning A, Bygning B, boxen. ");
                 DefaultMenu();
             }
             
