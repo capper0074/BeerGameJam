@@ -33,7 +33,7 @@ namespace GameJam.Levels
                 }
                 else if (playerChoice == "Gå ind i Boxen")
                 {
-                    Boxen.GoToBoxen();
+                    Boxen.GoIntoBoxen();
                 }
             }
 
