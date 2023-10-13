@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace GameJam.GameStart
 {
     public static class StartMenu
     {
+        
         public static void Menu()
         {
 
@@ -23,20 +25,32 @@ namespace GameJam.GameStart
                 AsciiArt.Ascii_Name();
                 //Ascii_Art.Ascii_GameStart();
                 //Made a new menu system, so we can iteract with it.
-                var playerChoice = Beautifier.CoolMenu("Welcome to the beer game", "Start the game", "Exit the game");
+                string playerChoice = Beautifier.CoolMenu("Welcome to the beer game", "Start the game", "Exit the game");
 
+                bool loopStage = true;
 
                 if (playerChoice == "Start the game")
                 {
                     Console.Clear();
                     Info.GameInfo();
-                    Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
-                    Player.Name = Console.ReadLine();
+
+                    while (loopStage == true)
+                    {
+                        Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
+                        Player.Name = Console.ReadLine();
+                        if (Player.Name == "")
+                        {
+                            Console.WriteLine("Er du dum? Skriv dit navn!");
+                            loopStage = true;
+                        }
+                        else
+                        {
+                            loopStage = false;
+                        }
+                    }
                     Console.Clear();
                     state = false;
                     Intro.StartIntro();
-
-
                 }
                 else if (playerChoice == "Exit the game")
                 {
