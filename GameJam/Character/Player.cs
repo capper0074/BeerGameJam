@@ -24,6 +24,8 @@ namespace GameJam.Character
 
         private static bool isInitialize;
 
+        public static bool PlayerHasWon { get; set; }
+
         public static void Initialize()
         {
             if (isInitialize)
@@ -60,9 +62,22 @@ namespace GameJam.Character
             Piss += 1 * (Drunk / 10);
         }
 
+        public static void Tick_PissDamage()
+        {
+            if(Piss == 100)
+            {
+                Health -= 12;
+            }
+        }
+
         public static void TakeAPiss()
         {
+            Sound.StopSound();
+            Thread.Sleep(1000);
+            Sound.Peeing_Sound();
             Piss = 0;
+            Thread.Sleep(6000);
+            Sound.StopSound();
         }
 
         public static void Eat(Items food)

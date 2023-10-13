@@ -15,18 +15,23 @@ namespace GameJam.Levels
     {
         public static void StartIntro()
         {
-            Sound.Test();
-
+            #region[Narration]
             AsciiArt.Ascii_Intro();
-            Beautifier.CoolWrite("green", "Narrator","white", $"{Player.Name} er til fredagsbar i BeerBoxen. \n " +
-                "Svælget bliver smurt med tonsvis af Odense Classic. Han taber lidt for mange omgange beerpong.\n " +
-                "Øllen hober sig op og toilettet er den eneste udvej. \n " +
-                "Det sidste han ser, er sig selv i spejlet inden " +
-                "han falder omkuld med sin bajer i hånden.");
+            Beautifier.CoolWrite("green", "Narrator", "white", $"{Player.Name} er til fredagsbar i BeerBoxen.");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green", "Narrator", "white", "Svælget bliver smurt med tonsvis af Odense Classic.");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green", "Narrator", "white", "Han taber lidt for mange omgange beerpong.");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green", "Narrator", "white", "Øllen hober sig op og toilettet er den eneste udvej.");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green", "Narrator", "white", "Det sidste han ser, er sig selv i spejlet...");
+            Console.ReadKey();
+            Beautifier.CoolWrite("green","Narrator","White", "han falder omkuld med sin bajer i hånden.") ;
+            Console.ReadKey();
+            #endregion
             Controls.Control(); // husk at kalde Controls.Control hver gang vi skifter rum
             Boxen.WakeUp();
-            
-             
 
         }
     }

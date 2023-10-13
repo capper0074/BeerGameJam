@@ -9,6 +9,15 @@ namespace GameJam.Graphic
 {
     public static class Beautifier
     {
+        public static void CoolPanel(string panelHeader, string panelText)
+        {
+            Console.WriteLine("\n \n");
+            var panel = new Panel(panelText);
+            panel.Header(panelHeader);
+            panel.BorderColor(Color.Red3);
+            AnsiConsole.Write(panel);
+        }
+
         public static void CoolLine()
         {
             var rule = new Rule();
@@ -35,6 +44,15 @@ namespace GameJam.Graphic
                 .AddItem("Stamina", stamina, Color.Blue)
                 .AddItem("Drunk", drunk, Color.Purple_1)
                 .AddItem("Piss", piss, Color.Yellow));
+        }
+
+        public static void CoolBarCombat(int health, string name)
+        {
+            AnsiConsole.Write(new BarChart()
+                .Width(60)
+                .Label($"[green bold underline]{name}[/]")
+                .CenterLabel()
+                .AddItem("Health", health, Color.Red));
         }
 
         public static string CoolMenu(string title, string choice1, string choice2)//Method overload for 2 choices
@@ -67,6 +85,35 @@ namespace GameJam.Graphic
             return playerChoice;
         }
 
+        public static string CoolMenu(string title, string choice1, string choice2, string choice3, string choice4, string choice5)//Method overload for 4 choices
+        {
+            CoolLine();
+            string playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                .Title($"{title}")
+                .PageSize(5)
+                .AddChoices(choice1, choice2, choice3, choice4, choice5));
+            return playerChoice;
+        }
+
+        public static string CoolMenu(string title, string choice1, string choice2, string choice3, string choice4, string choice5, string choice6)//Method overload for 4 choices
+        {
+            CoolLine();
+            string playerChoice = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                .Title($"{title}")
+                .PageSize(5)
+                .AddChoices(choice1, choice2, choice3, choice4, choice5, choice5));
+            return playerChoice;
+        }
+
+        public static void CoolCenterLine(string text, string color)
+        {
+            var rule = new Rule($"[{color}]{text}[/]");
+            rule.Style = Style.Parse("black");
+
+            rule.Centered();
+
+            AnsiConsole.Write(rule);
+        }
 
     }
 }

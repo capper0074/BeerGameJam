@@ -10,7 +10,8 @@ namespace GameJam.Stuff
     {
         public static bool isInitialized;
 
-        public static List<Items> gameItemList {  get; private set; }
+        public static List<Items> gameItemList { get; private set; }
+        public static List<Weapons> weaponList { get; private set; }
 
         public static void Initialize()
         {
@@ -22,10 +23,12 @@ namespace GameJam.Stuff
 
             gameItemList = new List<Items>();
 
+            weaponList = new List<Weapons>();
 
             if (!isInitialized)
             {
-                
+
+                #region[Game items initialized]
                 Items oClassic = new("Odense Classic", 0, 2, 4, true);
                 Items oPils = new("Odense Pilsner", 0, 2, 3, false);
                 Items o1859 = new("Odense 1859", 0, 2, 5, false);
@@ -37,6 +40,19 @@ namespace GameJam.Stuff
                 gameItemList.Add(o1859);
                 gameItemList.Add(giffel);
                 gameItemList.Add(pizzaSlice);
+                #endregion
+
+                #region[Game weapons initialized]
+                Weapons blueSword = new("Sværd", 2, "blueSword");
+                Weapons boxingGloves = new("Boxe handske", 3, "boxing");
+                Weapons gun = new("Pistol", 4, "gun");
+                Weapons magicStaff = new("Magi stav", 5, "magic");
+
+                weaponList.Add(blueSword);
+                weaponList.Add(boxingGloves);
+                weaponList.Add(gun);
+                weaponList.Add(magicStaff);
+                #endregion
 
                 isInitialized = true;
             }

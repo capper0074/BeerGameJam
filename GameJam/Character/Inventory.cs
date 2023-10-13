@@ -11,8 +11,7 @@ namespace GameJam.Character
 {
     internal static class Inventory
     {
-        private static List<Items> inventory; //List containing the type Items
-
+        public static List<Items> inventory { get; private set; } //List containing the type Items
         private static bool isInitialize;
         public static void Initialize()
         {
@@ -27,30 +26,23 @@ namespace GameJam.Character
             {
                 foreach (var item in GameItems.gameItemList)
                 {
-                    if(item.IsStartingItem)
+                    if (item.IsStartingItem)
                     {
                         inventory.Add(item);
                     }
                 }
 
-                //TEST
-                var temp = (LootTable.GetDrops(3));
-                foreach (var item in temp)
-                {
-                    inventory.Add(item);
-                }
-
                 Items empty_slot = new Items("Empty_Slot", 0, 0, 0, true);
 
-                for (int i = 0; i < 10 - inventory.Count; i++)
-                {
+                for (int i = 0; i < 3; i++) //If you use inventory for this, the for loop is going to check the inventory count every iteration which is not what we want since the inventory count changes every time
+                {                           //There are 2 starting items so it adds 3 empty slots making the inventory a 5 slot size, this has to manually changed every time it has to be changed to fit more items
                     inventory.Add(empty_slot);
                 }
 
                 isInitialize = true;
-                
+
             }
-            
+
         }
 
         public static void DisplayInventory()
@@ -73,31 +65,30 @@ namespace GameJam.Character
 
                 if (player_Answer == "yes")
                 {
-                    bool player_state = true;
 
-                    while (player_state == true)
+                    var inv_index = AnsiConsole.Prompt(new SelectionPrompt<string>()
+                        .Title("Choose what u want from your inventory \n ---------------------------")
+                        .PageSize(5)
+                        .AddChoices(inventory[0].Name, inventory[1].Name, inventory[2].Name, inventory[3].Name, inventory[4].Name, inventory[4].Name)); //This has to be manually changed to fit the amount of inventory items there are otherwise it will throw an index error
+                    //Have removed the player_State while loop because it was an endless loop if the index was empty
+                    if (inv_index == "Empty_Slot")
                     {
-                        var inv_index = AnsiConsole.Prompt(new SelectionPrompt<string>()
-                            .Title("Choose what u want from your inventory \n ---------------------------")
-                            .PageSize(7)
-                            .AddChoices(inventory[0].Name, inventory[1].Name, inventory[2].Name, inventory[3].Name, inventory[4].Name, inventory[5].Name, inventory[6].Name));
-
-                        if (inv_index == "Empty_Slot")
-                        {
-                            Console.Clear();
-                            Beautifier.CoolWrite("red", "U dont have anything in that slot"); //this can add color to your text
-                            player_state = true;
-                        }
-                        else if (inv_index != "Empty_Slot")
-                        {
-                            int index = inventory.FindIndex(item => item.Name == inv_index);
-                            PickFromInventory(inventory[index]);
-                            player_state = false;
-                        }
-
-
+                        Console.Clear();
+                        Beautifier.CoolWrite("red", "U dont have anything in that slot");
                     }
-                    inv_State = false;
+                    else if (inv_index != "Empty_Slot")
+                    {
+                        int index = inventory.FindIndex(item => item.Name == inv_index);
+                        PickFromInventory(inventory[index]);
+
+                        Beautifier.CoolLine();
+                        Beautifier.CoolCenterLine("Dit inventar ser sådan her ud!", "blue");
+                        Beautifier.CoolLine();
+                        for (int i = 0; i < inventory.Count; i++)
+                        {
+                            Console.WriteLine(inventory[i].Name + " || " + inventory[i].HealthStat + " || " + inventory[i].StaminaStat + " || " + inventory[i].DrunkStat);
+                        }
+                    }
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -111,19 +102,39 @@ namespace GameJam.Character
 
         public static void AddToInventory(Items item)
         {
+            bool go = true;
             for (int i = 0; i < inventory.Count; i++)
             {
-                if (inventory[i].Name == "Empty_Slot")
+                if (go)
                 {
-                    inventory.Add(item);
+                    if (inventory[i].Name == "Empty_Slot" && !inventory.Contains(item))
+                    {
+                        inventory[i] = item;
+                        Beautifier.CoolCenterLine($"{item.Name} Ligger nu i dit inventar!", "blue");
+                        go = false;
+                        //Player.Money -= item.Cost
+                    }
+                    else if (inventory.Contains(item))
+                    {
+                        Beautifier.CoolCenterLine($"Vi tillader ikke mere end en type genstand af gangen!", "red");
+                        go = false;
+                    }
+                    else if (inventory[i].Name == "Empty_Slot")
+                    {
+                        Beautifier.CoolCenterLine($"Der er ikke mere plads i dine lommer!", "red");
+                        go = false;
+                    }
                 }
+
             }
         }
 
         public static void PickFromInventory(Items item)
         {
+            Sound.EatSound();
             Player.Eat(item);
             inventory.Remove(item);
+
             Items empty_slot = new Items("Empty_Slot", 0, 0, 0, false);
             inventory.Add(empty_slot);
         }
