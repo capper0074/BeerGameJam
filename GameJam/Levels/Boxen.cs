@@ -60,11 +60,13 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvad er det der dufter sådan?");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sniff*");
+            Sound.Sniff_Sound();
+            Thread.Sleep(4000);
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for.... Odense Classic!!");
+            Sound.Drinking_Sound();
             Console.ReadKey();
             Console.Clear();
-
             Beautifier.CoolWrite("Green", "Narrator", "White", $"{Player.Name} er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
             Console.ReadKey();
             Beautifier.CoolWrite("Green", "Narrator", "White", "Han vågnede nu op lørdag morgen i Beerboxen, og kan hører nogen udenfor toiletdøren." + "\n");
