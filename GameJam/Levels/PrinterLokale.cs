@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GameJam.Character;
 using GameJam.Graphic;
 using GameJam.Character;
+using GameJam.GameStart;
 
 namespace GameJam.Levels
 {
@@ -18,10 +19,12 @@ namespace GameJam.Levels
             var playerChoice = Beautifier.CoolMenu("Du befinder dig inde i printer lokalet", "Gå tilbage", "Snak med Jan");
             if (playerChoice == "Gå tilbage")
             {
+                Controls.Control();
                 AByg.GoIntoAbyg();
             }
             else if (playerChoice == "Snak med Jan")
             {
+                Controls.Control();
                 TalkToJan();
             }
         }

@@ -14,13 +14,15 @@ namespace GameJam.Levels
         public static bool HasBeen { get; set; }
         private static void DefaultMenu()
         {
-            var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "gå ind i Boxen", "gå ind i Bygning A");
-            if (playerChoice == "gå ind i Boxen")
+            var playerChoice = Beautifier.CoolMenu("Du er nu tilbage i bygning B", "Gå ind i Boxen", "Gå ind i Bygning A");
+            if (playerChoice == "Gå ind i Boxen")
             {
+                Controls.Control();
                 Boxen.GoIntoBoxen();
             }
-            else if (playerChoice == "gå ind i bygning A")
+            else if (playerChoice == "Gå ind i bygning A")
             {
+                Controls.Control();
                 AByg.GoIntoAbyg();
             }
 

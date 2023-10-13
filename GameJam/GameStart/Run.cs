@@ -27,6 +27,7 @@ namespace GameJam.GameStart
             Player.Initialize();
             Enemy.Initialize();
             Inventory.Initialize();
+            Bartender.Initialize();
 
             StartMenu.Menu();
         }

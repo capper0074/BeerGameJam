@@ -25,10 +25,12 @@ namespace GameJam.Levels
             {
                 if (playerChoice == "Gå ind i bygning A")
                 {
+                    Controls.Control();
                     AByg.GoIntoAbyg();
                 }
                 else if (playerChoice == "Gå ind bygning B")
                 {
+                    Controls.Control();
                     BByg.GoIntoB();
                 }
                 else if (playerChoice == "Gå ind i Boxen")
@@ -47,6 +49,7 @@ namespace GameJam.Levels
             }
             else if (!HasBeen)
             {
+                Console.Clear();
                 Beautifier.CoolWrite("green", "Narrator", "white", Player.Name + "  Du er nu kommet udenfor for første gang. Du har valgmulighederne at gå i bygning A, Bygning B, boxen. ");
                 DefaultMenu();
             }
