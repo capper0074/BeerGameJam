@@ -18,7 +18,7 @@ namespace GameJam.GameStart
             Console.Clear();
 
             AsciiArt.Ascii_Name();
-            Beautifier.CoolPanel("", "Lige for at hjælpe dig en smule får du lige nogle hinst\n " +
+            Beautifier.CoolPanel("", "Lige for at hjælpe dig en smule får du lige nogle hints\n" +
                 "Først og fremmest, så husk at du skal få drukket nogle øl, da du mister stamina");
             Console.ReadKey();
             Console.Clear();

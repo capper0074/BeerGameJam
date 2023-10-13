@@ -70,7 +70,12 @@ namespace GameJam.Character
 
         public static void TakeAPiss()
         {
+            Sound.StopSound();
+            Thread.Sleep(1000);
+            Sound.Peeing_Sound();
             Piss = 0;
+            Thread.Sleep(6000);
+            Sound.StopSound();
         }
 
         public static void Eat(Items food)

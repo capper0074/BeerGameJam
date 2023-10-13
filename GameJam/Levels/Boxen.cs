@@ -2,13 +2,14 @@
 using GameJam.GameStart;
 using GameJam.Graphic;
 using System;
+using GameJam.Fighting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using GameJam.Levels;
-
+using GameJam.Stuff;
 
 namespace GameJam.Levels
 {
@@ -18,11 +19,11 @@ namespace GameJam.Levels
         {
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvor er jeg?");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "Og fuck hvor er jeg tørstig.");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "... og fuck hvor er jeg tørstig.");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvad er det der dufter sådan?");
             Console.ReadKey();
-            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sounds*");
+            Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sniff*");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for.... Odense Classic!!");
             Console.ReadKey();
@@ -53,6 +54,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
+            Console.Clear();
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
             {
                 //Rengøringsdamen går videre, uden at der sker noget.
@@ -62,12 +64,19 @@ namespace GameJam.Levels
             }
             else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
-                //COMBAT
-                
-                Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
-                    "\n");
-                // loot drop
-                
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
+                {
+                    Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
+                                        "\n");
+                }
+                else if (combatState == false)
+                {
+                    Console.Clear();
+                    GameLost.GameIsLost();
+                }
+
             }
 
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Damn, hun var godt nok muggen, b***h");
@@ -76,8 +85,9 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Måske jeg kan nuppe en fra baren?");
             Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "White", Player.Name + "Alti' en god idé med en øl, du er nu i et Open World.");
+            Beautifier.CoolWrite("green", "Narrator", "White", "Alti' en god idé med en øl.");
             Console.ReadKey();
+            Beautifier.CoolWrite("green","Narrator","white","*Du har nu fri tøjler til at vælge lige der hvor ");
             Beautifier.CoolWrite("green", "Narrator", "White", "Det vil sige du kan gå hen til baren, eller.....?");
             Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "eller...? hvad, afslut din sætning");
             Console.ReadKey();
@@ -89,21 +99,20 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("green", "Narrator", "White", "*suk* ....");
             Console.ReadKey();
-            Beautifier.CoolWrite("green", "Narrator", "White", "så er 4th wall slået fra.. lorte developers");
-            Console.ReadKey();
             Beautifier.CoolWrite("green", "Narrator", "White", "Hvor kom jeg fra.. nå ja, eller du kan gå rundt udenfor og se hvad for nogle andre områder der er adgang til");
             Console.ReadKey();
             Console.Clear();
             string PlayerChoice2 = Beautifier.CoolMenu("", "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.", "udforsk området udenfor.");
             if (PlayerChoice2 == "Gå hen mod baren og se om der er flere øl tilbage fra gårdagen's fredagsbar.")
             {
-                Beautifier.CoolWrite("green", "Narrator", "White", $"SMH der er ingen ryggrad at finde på {Player.Name}");
+                Beautifier.CoolWrite("green", "Narrator", "White", $"SMH der er ingen ryggrad at finde på {Player.Name} sådan en duks som altid gør hvad der bliver sagt.");
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "årh.. så hold dog kæft, skal have skruet ned for tømmermænden på den eneste rigtiger måde");
                 Console.ReadKey();
                 Beautifier.CoolWrite("blue",$"{Player.Name}","White","flere bajere");
                 Console.ReadKey();
                 Bar.Bartender();
+                Controls.Control();
             }
             else if (PlayerChoice2 == "udforsk området udenfor.")
             {
@@ -112,8 +121,12 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("blue", $"{Player.Name}", "White", "You know it.");
                 Console.ReadKey();
                 Outside.Weoutside();
-
+                Controls.Control();
             }
+        }
+        public static void Gåtilbage() 
+        {
+            
         }
     }
 }

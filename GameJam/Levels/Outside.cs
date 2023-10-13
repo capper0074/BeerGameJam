@@ -25,7 +25,7 @@ namespace GameJam.Levels
             Console.ReadKey();
             Beautifier.CoolWrite("green", "Narrator", "white", $"Før lørdag var der himmel, men nu så {Player.Name} sæbebobbel lignende kubbel,\n som så ud til at afgrænse UCL fra omverdenen.");
             Console.ReadKey();
-            Beautifier.CoolWrite("", $" Der er flere forskellige muligheder her.");
+            Beautifier.CoolWrite("green", "Narrator","White", $" Der er flere forskellige muligheder her.");
             Console.ReadKey();
 
             playerChoice = Beautifier.CoolMenu("", "Gå mod A-bygning", "Gå mod den dystre skov");

@@ -23,18 +23,12 @@ namespace GameJam.Fighting
 
             Creatures enemy = Enemy.Enemy_Pick();
 
-            
-
             while(combatState == true)
             {
-                
-
                 if (Player.Health > 0)
                 {
-
                     if (enemy.Enemy_Health > 0)//Det skal være en modstander.
                     {
-                        
                         Console.WriteLine("The combat starts");
 
                         if(Player.Piss >= 70)
@@ -56,13 +50,60 @@ namespace GameJam.Fighting
                         }
                         else
                         {
-                            Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
-                            Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
-                            enemy.Enemy_Health -= WeaponSlot.DisplayStat();
-                            Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
-                            Console.ReadKey();
-                        }
+                            if(Player.Drunk >= 65)
+                            {
+                                Random random = new Random();
+                                int randomNumber = random.Next(1,4);
 
+                                if(randomNumber == 1)
+                                {
+                                    Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
+                                    Console.WriteLine($"You are too drunk to hit {enemy.Name} so u miss him");
+                                    enemy.Enemy_Health -= 0; //Is this necessary?
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
+                                    Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
+                                    enemy.Enemy_Health -= WeaponSlot.DisplayStat();
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Console.ReadKey();
+                                }
+                            }
+                            else if(Player.Drunk >= 85)
+                            {
+                                Random random = new Random();
+                                int randomNumber = random.Next(1, 3);
+
+                                if (randomNumber == 1)
+                                {
+                                    Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
+                                    Console.WriteLine($"You are too drunk to hit {enemy.Name} so u miss him");
+                                    enemy.Enemy_Health -= 0;
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
+                                    Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
+                                    enemy.Enemy_Health -= WeaponSlot.DisplayStat();
+                                    Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                    Console.ReadKey();
+                                }
+                            }
+                            //here
+                            else
+                            {
+                                Console.WriteLine($"U use your {WeaponSlot.DisplayName()} to attack {enemy.Name}");
+                                Console.WriteLine($"U deal {WeaponSlot.DisplayStat()} to {enemy.Name}");
+                                enemy.Enemy_Health -= WeaponSlot.DisplayStat();
+                                Beautifier.CoolBarCombat(enemy.Enemy_Health, "Enemy health");
+                                Console.ReadKey();
+                            }
+                        }
                         if (enemy.Enemy_Health > 0)
                         {
                             Console.WriteLine($"Now {enemy.Name} attacks u");
@@ -74,10 +115,10 @@ namespace GameJam.Fighting
                             Console.WriteLine("This was round: " + combatRounds);
                             Console.ReadKey();
                             Console.Clear();
-                            combatRounds += 1;
+                            combatRounds++;
                         }
 
-                        else if (enemy.Enemy_Health <= 0)
+                        else if (enemy.Enemy_Health <= 0) //Is this necessary?
                         {
                             Console.Clear();
                             Console.WriteLine("U won the combat");
@@ -106,10 +147,10 @@ namespace GameJam.Fighting
                     return false; //u lost
                     Console.Clear();
                     AsciiArt.Ascii_Lose();
+                    Console.ReadKey(); //Wait for input so player can see the beautiful art
                     StartMenu.Menu();
                 }
 
-                
             }
             Sound.StopSound();
             return false;
