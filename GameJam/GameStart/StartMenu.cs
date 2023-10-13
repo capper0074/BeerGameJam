@@ -30,8 +30,10 @@ namespace GameJam.GameStart
                 {
                     Console.Clear();
                     Info.GameInfo();
+
                     Beautifier.CoolCenterLine("Hvad hedder du?", "blue");
                     Player.Name = Console.ReadLine();
+                     
                     Console.Clear();
                     state = false;
                     Intro.StartIntro();
