@@ -51,6 +51,16 @@ namespace GameJam.Graphic
             player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\Peeing_Sound.mp3"; //Sæt jeres egen file path ind. Kan ikke få en relative til at virke
             player.controls.play();
         }
+        public static void Sniff_Sound() 
+        {
+            player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\Sniffing Sound Effect.mp3";
+            player.controls.play();
+        }
+        public static void Drinking_Sound()
+        {
+            player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\Minecraft Drinking Sound Effect.mp3";
+            player.controls.play();
+        }
 
         public static void StopSound()
         {
