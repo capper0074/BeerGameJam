@@ -103,11 +103,22 @@ namespace GameJam.Levels
             else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
             {
                 Controls.Control();
-                //COMBAT
-                #region[Narration]
-                Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
-                    "\n");
-                #endregion
+
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
+                {
+                    #region[Narration]
+                    Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
+                        "\n");
+                    #endregion
+                }
+                else
+                {
+                    GameLost.GameIsLost();
+                }
+
+
                 // loot drop
 
             }
