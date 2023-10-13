@@ -43,7 +43,7 @@ namespace GameJam.Stuff
                 #endregion
 
                 #region[Game weapons initialized]
-                Weapons blueSword = new("Sværd", 2, "blueSword");
+                Weapons blueSword = new("Sværd", 17, "blueSword");
                 Weapons boxingGloves = new("Boxe handske", 3, "boxing");
                 Weapons gun = new("Pistol", 4, "gun");
                 Weapons magicStaff = new("Magi stav", 5, "magic");
