@@ -7,6 +7,8 @@ using GameJam.Character;
 using GameJam.Graphic;
 using GameJam.Character;
 using GameJam.GameStart;
+using GameJam.Fighting;
+using GameJam.Stuff;
 
 namespace GameJam.Levels
 {
@@ -65,29 +67,64 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("red", "Jan", "white", "Hvis du vil igennem, så er det MIG du skal gennem først!");
                 Console.ReadKey();
                 #endregion
-                //PUT HELTEN I COMBAT MOD JAN
-                #region[Narration]
-                Beautifier.CoolWrite("red", "Jan: ", "white", "NEEEEEEEJ DU BESEJREDE MIIIG");
-                Console.ReadKey();
-                Beautifier.CoolWrite("green", "Narrator: ", "white", "Uden sin øl, tog Jan hjem for lave flere af sine online tutorials");
-                #endregion
+                //PUT HELTEN I COMBAT MOD JAN ALLIGEVEL
+                Controls.Control();
 
-            }
-            else if (playerChoice == "Flæk ham (combat)")
-            {
-                // Gå i combat mod jan
-                if (Player.PlayerHasWon == true)
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
                 {
                     #region[Narration]
-                    Beautifier.CoolWrite("red", "Jan", "white", "NOOOOOOO, du besejrede miiiiigggg");
+                    Beautifier.CoolWrite("red", "Jan: ", "white", "NEEEEEEEJ DU BESEJREDE MIIIG");
+                    Console.ReadKey();
+                    Beautifier.CoolWrite("green", "Narrator: ", "white", "Uden sin øl, tog Jan hjem for lave flere af sine online tutorials");
+                    Console.ReadKey();
                     #endregion
+
                 }
                 else
                 {
                     #region[Narration]
-                    Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS! DU BURDE LÆSE OP PÅ DINE LEKTIER!");
+                    Beautifier.CoolWrite("red", "Jan: ", "white", "NEEEEEEEJ DU BESEJREDE MIIIG");
+                    Console.ReadKey();
+                    Beautifier.CoolWrite("green", "Narrator: ", "white", "Uden sin øl, tog Jan hjem for lave flere af sine online tutorials");
+                    Console.ReadKey();
+                    GameLost.GameIsLost();
                     #endregion
                 }
+
+
+            }
+            else if (playerChoice == "Flæk ham (combat)")
+            {
+                Controls.Control();
+
+                bool combatState = Combat.StartCombat();
+
+                if (combatState == true)
+                {
+                    #region[Narration]
+                    Beautifier.CoolWrite("green", "Narrator", "White", $"{Player.Name} Er nu færdig med hans første fist fight, husk at efter hver aktion mister du stamina. " +
+                        "\n");
+                    #endregion
+                }
+                else
+                {
+                    GameLost.GameIsLost();
+                }
+                // Gå i combat mod jan
+                //if (Player.PlayerHasWon == true)
+                //{
+                //    #region[Narration]
+                //    Beautifier.CoolWrite("red", "Jan", "white", "NOOOOOOO, du besejrede miiiiigggg");
+                //    #endregion
+                //}
+                //else
+                //{
+                //    #region[Narration]
+                //    Beautifier.CoolWrite("red", "Jan", "white", "MUHAHAHAHA, DU ER EN SVANS! DU BURDE LÆSE OP PÅ DINE LEKTIER!");
+                //    #endregion
+                //}
             }
         }
 
