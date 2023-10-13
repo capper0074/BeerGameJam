@@ -44,9 +44,9 @@ namespace GameJam.Stuff
 
                 #region[Game weapons initialized]
                 Weapons blueSword = new("Sværd", 17, "blueSword");
-                Weapons boxingGloves = new("Boxe handske", 3, "boxing");
-                Weapons gun = new("Pistol", 4, "gun");
-                Weapons magicStaff = new("Magi stav", 5, "magic");
+                Weapons boxingGloves = new("Boxe handske", 17, "boxing");
+                Weapons gun = new("Pistol", 17, "gun");
+                Weapons magicStaff = new("Magi stav", 17, "magic");
 
                 weaponList.Add(blueSword);
                 weaponList.Add(boxingGloves);
