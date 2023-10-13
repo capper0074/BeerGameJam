@@ -60,11 +60,13 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("Blue", Player.Name, "White", "Hvad er det der dufter sådan?");
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Sniff Sniff*");
+            Sound.Sniff_Sound();
+            Thread.Sleep(4000);
             Console.ReadKey();
             Beautifier.CoolWrite("Blue", Player.Name, "White", "*Glurgg Glurgg* Lige hvad jeg havde brug for.... Odense Classic!!");
+            Sound.Drinking_Sound();
             Console.ReadKey();
             Console.Clear();
-
             Beautifier.CoolWrite("Green", "Narrator", "White", $"{Player.Name} er en svagdrikker, en letvægt og er faldet i søvn på toilettet (What a pussy)");
             Console.ReadKey();
             Beautifier.CoolWrite("Green", "Narrator", "White", "Han vågnede nu op lørdag morgen i Beerboxen, og kan hører nogen udenfor toiletdøren." + "\n");
@@ -89,7 +91,7 @@ namespace GameJam.Levels
             Beautifier.CoolWrite("Red", "Rengørings Dame", "White", "\"Pant!, eller jeg kalder på vagterne!\"" + "\n");
             Console.ReadKey();
             #endregion
-            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valg muligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
+            Beautifier.CoolWrite("Green", "Narrator", "White", $" {Player.Name} er nu mødt med 2 valgmuligheder, \n hvad vælger du? er du en pussy? eller går du ud og tager konflikten");
             
             string playerChoice1 = Beautifier.CoolMenu("", "Bliv ved med at gemme dig ind på toilettet?", "Gå ud og konfrontere rengørings damen");
             if (playerChoice1 == "Bliv ved med at gemme dig ind på toilettet?")
@@ -100,7 +102,7 @@ namespace GameJam.Levels
                 Beautifier.CoolWrite("green", "Narrator", "White", $"Det virker til at hun løj omkring vagterne, hun går videre og {Player.Name} er nu en tøsedreng");
                 #endregion
             }
-            else if (playerChoice1 == "Gå ud og konfrontere rengørings damen")
+            else if (playerChoice1 == "Gå ud og konfronter rengørings damen")
             {
 
                 bool combatState = Combat.StartCombat();
