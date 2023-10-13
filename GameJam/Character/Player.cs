@@ -24,6 +24,8 @@ namespace GameJam.Character
 
         private static bool isInitialize;
 
+        public static bool PlayerHasWon { get; set; }
+
         public static void Initialize()
         {
             if (isInitialize)
