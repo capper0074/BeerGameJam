@@ -61,7 +61,11 @@ namespace GameJam.Graphic
             player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\onlymp3_mp3cut.net_1.mp3";
             player.controls.play();
         }
-
+        public static void Knocking_Sound()
+        {
+            player.URL = @"C:\Skole\BeerGameJam\GameJam\Graphic\Sounds\onlymp3_mp3cut.net_2.mp3";
+            player.controls.play();
+        }
         public static void StopSound()
         {
             player.controls.stop();
